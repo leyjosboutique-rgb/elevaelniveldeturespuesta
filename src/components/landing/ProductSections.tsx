@@ -123,7 +123,7 @@ export function Conexion() {
         </Reveal>
       </div>
 
-      <div className="mt-24 grid gap-12 md:grid-cols-2">
+      <div className="mt-14 grid gap-12 md:mt-24 md:grid-cols-2">
         {[
           { t: "40 días de viaje en silencio", d: "Tu mundo interno" },
           { t: "Una mente vale más que un millón", d: "Tu manera de pensar y decidir" },
@@ -139,7 +139,7 @@ export function Conexion() {
       </div>
 
       <Reveal delay={160}>
-        <div className="mt-20 flex flex-col items-center text-center">
+        <div className="mt-12 flex flex-col items-center text-center md:mt-20">
           <span aria-hidden className="h-16 w-px bg-gold-soft" />
           <p className="display-md mt-8">Tú</p>
           <p className="eyebrow mt-4">Actúas desde un lugar diferente</p>
@@ -181,7 +181,7 @@ export function Transformacion() {
         </p>
       </Reveal>
 
-      <div className="mt-20 grid grid-cols-2 gap-x-8 md:gap-x-20">
+      <div className="mt-12 grid grid-cols-2 gap-x-5 md:mt-20 md:gap-x-20">
         <Reveal>
           <p className="eyebrow border-b border-line pb-4 text-muted-foreground">Antes</p>
         </Reveal>
@@ -227,7 +227,7 @@ export function Aplicacion() {
         <h2 className="display-lg mt-8 max-w-[16ch]">¿Dónde empieza a cambiar esto?</h2>
       </Reveal>
 
-      <div className="mt-20 grid gap-px md:grid-cols-3">
+      <div className="mt-12 grid gap-px md:mt-20 md:grid-cols-3">
         {aplicaciones.map((a, i) => (
           <Reveal key={a.t} delay={i * 90}>
             <article className="h-full border-t border-line py-9 md:pr-10">
@@ -264,7 +264,7 @@ export function Bonos() {
         </h2>
       </Reveal>
 
-      <div className="mt-16 grid gap-10 md:grid-cols-3">
+      <div className="mt-10 grid gap-10 md:mt-16 md:grid-cols-3">
         {bonos.map((b, i) => (
           <Reveal key={b.t} delay={i * 110}>
             <div>
