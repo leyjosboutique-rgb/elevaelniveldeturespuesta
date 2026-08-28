@@ -249,6 +249,46 @@
   );
 }
 
+/*
+ * Hero layout — CSS grid with named areas so the order can differ between
+ * mobile (title -> image -> rest) and desktop (two columns, image on the
+ * right spanning the full height of the text column) without duplicating
+ * markup.
+ */
+.hero-layout {
+  display: grid;
+  row-gap: 2rem;
+  grid-template-areas:
+    "eyebrow"
+    "title"
+    "image"
+    "subtitle"
+    "actions"
+    "microcopy";
+}
+
+@media (min-width: 1024px) {
+  .hero-layout {
+    grid-template-columns: 1.05fr 0.95fr;
+    column-gap: 5rem;
+    row-gap: 1.5rem;
+    align-items: center;
+    grid-template-areas:
+      "eyebrow  image"
+      "title    image"
+      "subtitle image"
+      "actions  image"
+      "microcopy image";
+  }
+}
+
+.hero-area-eyebrow { grid-area: eyebrow; }
+.hero-area-title { grid-area: title; }
+.hero-area-image { grid-area: image; }
+.hero-area-subtitle { grid-area: subtitle; }
+.hero-area-actions { grid-area: actions; }
+.hero-area-microcopy { grid-area: microcopy; }
+
 @keyframes reveal-up {
   from {
     opacity: 0;
@@ -278,4 +318,3 @@
     scroll-behavior: auto;
   }
 }
-
