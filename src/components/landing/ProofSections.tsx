@@ -1,226 +1,88 @@
+import { useEffect, useState } from "react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { Cta, Eyebrow, MediaFrame, Reveal, Section } from "./primitives";
-import ebookUnoMockup from "@/assets/libro40dias.webp";
-import ebookDosMockup from "@/assets/libromente.webp";
-import conexionImage from "@/assets/conexion.webp";
+import bundleMockup from "@/assets/hero.webp";
+import garantiaSello from "@/assets/garantia.webp";
 
-function BenefitList({ items }: { items: string[] }) {
-  return (
-    <ul className="mx-auto mt-10 max-w-[46ch] divide-y divide-line border-y border-line lg:mx-0 lg:max-w-none">
-      {items.map((b) => (
-        <li key={b} className="flex items-baseline justify-center gap-4 py-4 lg:justify-start">
-          <span aria-hidden className="h-px w-5 shrink-0 translate-y-[-0.3em] bg-accent" />
-          <span className="text-sm tracking-wide md:text-base">{b}</span>
-        </li>
-      ))}
-    </ul>
-  );
-}
-
-export function EbookUno() {
-  return (
-    <Section id="ebook-01">
-      <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-24">
-        <Reveal>
-          <MediaFrame
-            src={ebookUnoMockup}
-            alt="Portada de 40 días de viaje en silencio"
-            label="Mockup ebook 01"
-            ratio="4 / 5"
-          />
-        </Reveal>
-        <div>
-          <Reveal>
-            <Eyebrow>Ebook 01</Eyebrow>
-          </Reveal>
-          <Reveal delay={100}>
-            <h2 className="display-md mt-8 uppercase">40 días de viaje en silencio</h2>
-          </Reveal>
-          <Reveal delay={160}>
-            <p className="body-lg mx-auto mt-6 max-w-[46ch] lg:mx-0">
-              Un recorrido práctico para trabajar tu mente, tus emociones y la forma en que
-              respondes ante lo que ocurre a tu alrededor.
-            </p>
-          </Reveal>
-          <Reveal delay={220}>
-            <BenefitList
-              items={[
-                "40 ejercicios prácticos",
-                "Reflexión diaria",
-                "Control de reacciones",
-                "Mayor claridad mental",
-                "Comunicación más consciente",
-              ]}
-            />
-          </Reveal>
-        </div>
-      </div>
-    </Section>
-  );
-}
-
-export function EbookDos() {
-  return (
-    <Section id="ebook-02" className="border-y border-line bg-secondary">
-      <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-24">
-        <div className="order-2 lg:order-1">
-          <Reveal>
-            <Eyebrow>Ebook 02</Eyebrow>
-          </Reveal>
-          <Reveal delay={100}>
-            <h2 className="display-md mt-8 uppercase">Una mente vale más que un millón</h2>
-          </Reveal>
-          <Reveal delay={160}>
-            <p className="body-lg mx-auto mt-6 max-w-[46ch] lg:mx-0">
-              Una guía para cambiar tu manera de pensar sobre el dinero, las oportunidades y las
-              decisiones que construyen tu futuro.
-            </p>
-          </Reveal>
-          <Reveal delay={220}>
-            <BenefitList
-              items={[
-                "Pensamiento financiero",
-                "Toma de decisiones",
-                "Nuevas perspectivas sobre el dinero",
-                "Identificación de oportunidades",
-                "Construcción de una dirección propia",
-              ]}
-            />
-          </Reveal>
-        </div>
-        <Reveal delay={120} className="order-1 lg:order-2">
-          <MediaFrame
-            src={ebookDosMockup}
-            alt="Portada de Una mente vale más que un millón"
-            label="Mockup ebook 02"
-            ratio="4 / 5"
-          />
-        </Reveal>
-      </div>
-    </Section>
-  );
-}
-
-export function Conexion() {
-  return (
-    <Section dark>
-      <div className="mx-auto max-w-3xl lg:mx-0">
-        <Reveal>
-          <Eyebrow>La conexión</Eyebrow>
-        </Reveal>
-        <Reveal delay={100}>
-          <h2 className="display-lg mt-8 lg:max-w-[14ch]">Una mente en calma piensa de otra manera.</h2>
-        </Reveal>
-        <Reveal delay={180}>
-          <p className="body-lg mt-8">
-            Puedes aprender sobre dinero. Puedes aprender sobre negocios. Puedes aprender sobre
-            oportunidades. Pero si reaccionas impulsivamente ante cada problema, tus emociones
-            terminarán tomando muchas de tus decisiones.
-          </p>
-        </Reveal>
-      </div>
-
-      <Reveal delay={220}>
-        <div className="mx-auto mt-14 w-full max-w-[420px] md:mt-20">
-          <img
-            src={conexionImage}
-            alt="Por eso estos dos libros trabajan desde dos direcciones diferentes. 40 días de viaje en silencio: tu mundo interno. Una mente vale más que un millón: tu manera de pensar y decidir. Tú: actúas desde un lugar diferente."
-            className="h-auto w-full"
-          />
-        </div>
-      </Reveal>
-    </Section>
-  );
-}
-
-const antes = [
-  "Reaccionas",
-  "Te apresuras",
-  "Te dejas llevar",
-  "Decides bajo presión",
-  "Buscas aprobación",
-  "Actúas desde el miedo",
-];
-const despues = [
-  "Respondes",
-  "Observas",
-  "Piensas",
-  "Eliges",
-  "Confías más en tu criterio",
-  "Actúas con dirección",
-];
-
-export function Transformacion() {
-  return (
-    <Section>
-      <Reveal>
-        <Eyebrow>La transformación</Eyebrow>
-      </Reveal>
-      <Reveal delay={100}>
-        <h2 className="display-lg mt-8 lg:max-w-[16ch]">No se trata de convertirte en otra persona.</h2>
-      </Reveal>
-      <Reveal delay={160}>
-        <p className="body-lg mx-auto mt-6 max-w-[42ch] italic lg:mx-0">
-          Se trata de dejar de actuar automáticamente.
-        </p>
-      </Reveal>
-
-      <div className="mt-12 grid grid-cols-2 gap-x-5 md:mt-20 md:gap-x-20">
-        <Reveal>
-          <p className="eyebrow border-b border-line pb-4 text-muted-foreground">Antes</p>
-        </Reveal>
-        <Reveal delay={100}>
-          <p className="eyebrow border-b border-accent pb-4">Después</p>
-        </Reveal>
-
-        {antes.map((a, i) => (
-          <Reveal key={a} delay={i * 70} className="contents">
-            <div className="contents">
-              <p className="border-b border-line py-5 text-base text-muted-foreground line-through decoration-gold-soft md:text-lg">
-                {a}
-              </p>
-              <p className="border-b border-line py-5 font-serif text-xl md:text-2xl">
-                {despues[i]}
-              </p>
-            </div>
-          </Reveal>
-        ))}
-      </div>
-    </Section>
-  );
-}
-
-const aplicaciones = [
-  { t: "Relaciones", d: "Menos discusiones impulsivas. Más conversaciones conscientes." },
-  { t: "Trabajo", d: "Más seguridad para responder ante presión y conflicto." },
-  { t: "Dinero", d: "Menos decisiones impulsivas. Más pensamiento estratégico." },
-  { t: "Vida personal", d: "Más capacidad para detenerte, observar y elegir." },
+const testimonials = [
   {
-    t: "Futuro",
-    d: "Dejar de vivir reaccionando a lo que sucede y empezar a construir lo que quieres.",
+    id: "margarita-valencia",
+    name: "Margarita Valencia",
+    location: "Chile",
+    rating: 5,
+    text: "Mi marido me dijo una vez 'parece que hablar conmigo es pisar una mina'. Me quedé helada, pero en el fondo sabía que tenía razón. Tengo una biblioteca entera de libros de autoayuda a medio leer, todos con el separador en la página 40 más o menos. Este lo terminé un domingo a la noche llorando, no de tristeza, sino porque por primera vez entendí que el problema no era él ni las discusiones. Era que yo contestaba antes de terminar de escuchar.",
+  },
+  {
+    id: "nohelia-ruiz",
+    name: "Nohelia Ruiz",
+    location: "Colombia",
+    rating: 5,
+    text: "Tengo dos hijos chicos y un trabajo que me deja sin energía para nada que no sea sobrevivir el día. Empecé este libro en el auto, esperando que salieran del colegio, cinco minutos acá, cinco minutos allá. Un jueves, mi hija de 7 me preguntó por qué siempre estoy 'con cara de enojada' cuando la busco. Esa noche no pude dormir. No por el libro. Por la pregunta de mi hija. El libro solo me dio las palabras para entender lo que ella ya había notado.",
+  },
+  {
+    id: "guadalupe-hernandez",
+    name: "Guadalupe Hernández",
+    location: "México",
+    rating: 4,
+    text: "Tengo 34 años y una lista de gimnasios, dietas y cursos online que empecé y dejé antes del mes. Cuando compré esto pensé 'otro más para la colección de cosas a medias'. Lo que cambió fue algo tonto: el cuaderno tenía un espacio para el día 17, y llegar hasta ahí y ver mi propia letra en las páginas anteriores me dio vergüenza de dejarlo. No fue disciplina. Fue no querer verme la cara en el espejo sabiendo que había abandonado otra cosa más.",
+  },
+  {
+    id: "luis-peralta",
+    name: "Luis Peralta",
+    location: "Argentina",
+    rating: 4,
+    text: "Yo no tengo depresión ni ansiedad ni nada de eso, para mí estas cosas eran para 'otro tipo de persona'. Lo que me hizo comprar fue una boludez: grité en la fila del supermercado porque una señora se coló, y después me quedé pensando en eso todo el día, como si esa señora me hubiera arruinado la tarde entera. Ese fue el momento en que entendí que no necesitaba estar mal para estar reaccionando mal todo el tiempo.",
   },
 ];
 
-export function Aplicacion() {
+function Stars({ count }: { count: number }) {
   return (
-    <Section className="border-y border-line bg-secondary">
+    <span aria-label={`${count} de 5 estrellas`} className="text-gold-soft tracking-[0.12em]">
+      {"★".repeat(count)}
+      <span className="text-gold-soft/30">{"★".repeat(5 - count)}</span>
+    </span>
+  );
+}
+
+export function Testimonios() {
+  return (
+    <Section>
       <Reveal>
-        <Eyebrow>Aplicación en la vida real</Eyebrow>
+        <Eyebrow>Testimonios</Eyebrow>
       </Reveal>
       <Reveal delay={100}>
-        <h2 className="display-lg mt-8 lg:max-w-[16ch]">¿Dónde empieza a cambiar esto?</h2>
+        <h2 className="display-lg mt-8 lg:max-w-[20ch]">
+          No se trata solo de leer. Se trata de lo que cambia cuando empiezas a aplicarlo.
+        </h2>
       </Reveal>
 
-      <div className="mt-12 grid gap-px md:mt-20 md:grid-cols-3">
-        {aplicaciones.map((a, i) => (
-          <Reveal key={a.t} delay={i * 90}>
-            <article className="flex h-full flex-col items-center border-t border-line py-9 text-center md:pr-10 lg:items-start lg:text-left">
-              <span className="font-serif text-sm text-accent">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <h3 className="mt-5 text-xl tracking-[0.16em] uppercase">{a.t}</h3>
-              <p className="mx-auto mt-4 max-w-[32ch] text-sm leading-relaxed text-muted-foreground lg:mx-0">
-                {a.d}
-              </p>
+      <div className="mt-12 grid gap-px sm:mt-20 sm:grid-cols-2">
+        {testimonials.map((t, i) => (
+          <Reveal key={t.id} delay={i * 100}>
+            <article className="flex h-full flex-col gap-6 border-t border-line py-10 sm:pr-10">
+              <div className="flex items-center gap-5">
+                <div className="frame relative grid size-16 shrink-0 place-items-center">
+                  <span aria-hidden className="absolute inset-0 bg-background/80" />
+                  <span className="relative text-[0.55rem] tracking-[0.18em] text-muted-foreground uppercase">
+                    Foto
+                  </span>
+                </div>
+                <div className="min-w-0">
+                  <p className="truncate text-sm tracking-[0.16em] uppercase">{t.name}</p>
+                  <p className="mt-1 text-xs text-muted-foreground">{t.location}</p>
+                </div>
+              </div>
+              <blockquote className="text-sm leading-relaxed text-muted-foreground">
+                "{t.text}"
+              </blockquote>
+              <div className="mt-auto pt-2">
+                <Stars count={t.rating} />
+              </div>
             </article>
           </Reveal>
         ))}
@@ -229,41 +91,228 @@ export function Aplicacion() {
   );
 }
 
-const bonos = [
-  { t: "Diario de claridad", label: "Bono 01 — Imagen / Mockup" },
-  { t: "Guía de respuestas conscientes", label: "Bono 02 — Imagen / Mockup" },
-  { t: "Mapa de decisiones", label: "Bono 03 — Imagen / Mockup" },
-];
+export function Oferta() {
+  return (
+    <Section id="oferta" dark className="py-28 md:py-40">
+      <div className="mx-auto max-w-3xl text-center">
+        <Reveal>
+          <div className="flex justify-center">
+            <span className="eyebrow">La oferta</span>
+          </div>
+        </Reveal>
+        <Reveal delay={100}>
+          <h2 className="display-lg mt-8">
+            Dos libros. <span className="italic normal-case text-accent">Una nueva forma de pensar.</span>
+          </h2>
+        </Reveal>
 
-export function Bonos() {
+        <Reveal delay={180}>
+          <div className="mx-auto mt-16 w-full max-w-[520px]">
+            <MediaFrame src={bundleMockup} alt="Bundle: los dos ebooks juntos" label="Mockup bundle" />
+          </div>
+        </Reveal>
+
+        <Reveal delay={240}>
+          <div className="mt-14 flex flex-col items-center gap-4 border-y border-line py-10">
+            <p className="text-base tracking-[0.16em] uppercase">40 días de viaje en silencio</p>
+            <span className="font-serif text-2xl text-accent">+</span>
+            <p className="text-base tracking-[0.16em] uppercase">
+              Una mente vale más que un millón
+            </p>
+            <p className="eyebrow mt-4">Bonos incluidos</p>
+          </div>
+        </Reveal>
+
+        <Reveal delay={300}>
+          <p className="mt-12 font-serif text-6xl leading-none md:text-7xl">
+            $15 <span className="align-super text-xl tracking-[0.2em]">USD</span>
+          </p>
+          <div className="mt-10 flex justify-center">
+            <Cta>Quiero los dos ebooks</Cta>
+          </div>
+          <p className="mt-8 text-[0.68rem] tracking-[0.24em] text-muted-foreground uppercase">
+            Garantía de 15 días · Compra segura
+          </p>
+        </Reveal>
+      </div>
+    </Section>
+  );
+}
+
+function pad(n: number) {
+  return String(n).padStart(2, "0");
+}
+
+export function Contador() {
+  const [left, setLeft] = useState(15 * 60);
+
+  useEffect(() => {
+    const id = setInterval(() => setLeft((s) => (s > 0 ? s - 1 : 0)), 1000);
+    return () => clearInterval(id);
+  }, []);
+
+  const expired = left === 0;
+
+  return (
+    <Section className="border-y border-line bg-secondary">
+      <div className="mx-auto max-w-2xl text-center">
+        <Reveal>
+          <div className="flex justify-center">
+            <span className="eyebrow">{expired ? "Oferta" : "Precio especial"}</span>
+          </div>
+        </Reveal>
+        <Reveal delay={100}>
+          <h2 className="display-md mt-8 uppercase">
+            {expired ? "El precio de $15 USD sigue disponible hoy" : "Tu precio especial termina en:"}
+          </h2>
+        </Reveal>
+        <Reveal delay={160}>
+          <p
+            className="mt-12 font-serif text-6xl tabular-nums md:text-8xl"
+            aria-live="polite"
+            aria-label="Tiempo restante en minutos y segundos"
+          >
+            {pad(Math.floor(left / 60))}
+            <span className="text-accent">:</span>
+            {pad(left % 60)}
+          </p>
+          <p className="mt-5 text-[0.65rem] tracking-[0.3em] text-muted-foreground uppercase">
+            Minutos : Segundos
+          </p>
+        </Reveal>
+        <Reveal delay={220}>
+          <div className="mt-12 flex justify-center">
+            <Cta>Quiero aprovechar la oferta</Cta>
+          </div>
+        </Reveal>
+      </div>
+    </Section>
+  );
+}
+
+export function Garantia() {
   return (
     <Section>
-      <Reveal>
-        <Eyebrow>Bonos incluidos</Eyebrow>
-      </Reveal>
-      <Reveal delay={100}>
-        <h2 className="display-md mt-8 uppercase lg:max-w-[20ch]">
-          Y para ayudarte a llevarlo a la práctica…
-        </h2>
-      </Reveal>
-
-      <div className="mt-10 grid gap-10 md:mt-16 md:grid-cols-3">
-        {bonos.map((b, i) => (
-          <Reveal key={b.t} delay={i * 110}>
-            <div className="flex flex-col items-center lg:items-start">
-              <MediaFrame label={b.label} ratio="3 / 4" />
-              <h3 className="mt-6 text-base tracking-[0.16em] uppercase">{b.t}</h3>
-              <span className="rule-gold mt-4" />
-            </div>
+      <div className="grid items-center gap-14 md:grid-cols-[minmax(0,0.7fr)_minmax(0,1fr)] md:gap-20">
+        <Reveal>
+          <div className="frame relative mx-auto grid aspect-square w-full max-w-[300px] place-items-center overflow-hidden rounded-full">
+            <img
+              src={garantiaSello}
+              alt="Sello de garantía de 15 días"
+              className="h-full w-full object-cover"
+            />
+          </div>
+        </Reveal>
+        <div>
+          <Reveal>
+            <Eyebrow>Garantía</Eyebrow>
           </Reveal>
-        ))}
-      </div>
-
-      <Reveal delay={120}>
-        <div className="mt-16">
-          <Cta variant="outline">Quiero empezar ahora</Cta>
+          <Reveal delay={100}>
+            <h2 className="display-md mt-8 uppercase">Puedes decidir con tranquilidad.</h2>
+          </Reveal>
+          <Reveal delay={160}>
+            <p className="body-lg mx-auto mt-6 max-w-[50ch] lg:mx-0">
+              Adquiere los ebooks, conoce el contenido y descubre si son adecuados para ti. Si
+              dentro de los primeros 15 días decides que no es para ti, podrás solicitar tu garantía
+              de acuerdo con nuestras condiciones.
+            </p>
+          </Reveal>
         </div>
-      </Reveal>
+      </div>
+    </Section>
+  );
+}
+
+const faqs = [
+  {
+    q: "¿Cómo recibo los ebooks?",
+    a: "Después de tu compra recibes el acceso digital en tu correo electrónico para descargar ambos ebooks.",
+  },
+  {
+    q: "¿Los puedo leer desde mi celular?",
+    a: "Sí. El formato está pensado para leerse cómodamente desde celular, tablet o computadora.",
+  },
+  {
+    q: "¿Es necesario tener experiencia previa?",
+    a: "No. El material está diseñado para empezar desde donde estés, con ejercicios prácticos y lenguaje sencillo.",
+  },
+  {
+    q: "¿Los dos libros vienen incluidos?",
+    a: "Sí. El bundle incluye 40 días de viaje en silencio y Una mente vale más que un millón, junto con los bonos.",
+  },
+  {
+    q: "¿Qué sucede después de comprar?",
+    a: "Recibes la confirmación y el acceso digital para comenzar de inmediato, a tu propio ritmo.",
+  },
+  {
+    q: "¿Cómo funciona la garantía?",
+    a: "Cuentas con 15 días para revisar el contenido. Si decides que no es para ti, puedes solicitar la garantía de acuerdo con nuestras condiciones.",
+  },
+];
+
+export function Faq() {
+  return (
+    <Section className="border-y border-line bg-secondary">
+      <div className="grid gap-14 md:grid-cols-[minmax(0,0.6fr)_minmax(0,1fr)] md:gap-20">
+        <div>
+          <Reveal>
+            <Eyebrow>Preguntas</Eyebrow>
+          </Reveal>
+          <Reveal delay={100}>
+            <h2 className="display-md mt-8 uppercase">Antes de decidir</h2>
+          </Reveal>
+        </div>
+        <Reveal delay={140} className="text-left">
+          <Accordion type="single" collapsible className="w-full border-t border-line">
+            {faqs.map((f) => (
+              <AccordionItem key={f.q} value={f.q} className="border-line">
+                <AccordionTrigger className="py-6 text-left font-serif text-lg hover:no-underline md:text-xl">
+                  {f.q}
+                </AccordionTrigger>
+                <AccordionContent className="max-w-[56ch] pb-8 text-sm leading-relaxed text-muted-foreground">
+                  {f.a}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </Reveal>
+      </div>
+    </Section>
+  );
+}
+
+export function Cierre() {
+  return (
+    <Section dark className="py-20 md:py-48">
+      <div className="mx-auto max-w-3xl text-center">
+        <Reveal>
+          <h2 className="display-lg">Dentro de unos meses seguirás tomando decisiones.</h2>
+        </Reveal>
+        <Reveal delay={160}>
+          <p className="body-lg mx-auto mt-12 max-w-[46ch]">
+            Algunas serán pequeñas. Otras cambiarán cosas importantes. La pregunta no es si vas a
+            enfrentarlas. La pregunta es desde qué lugar vas a enfrentarlas.
+          </p>
+        </Reveal>
+        <Reveal delay={240}>
+          <span aria-hidden className="mx-auto my-16 block h-16 w-px bg-gold-soft" />
+          <p className="display-md text-accent">
+            Calma tu mente.
+            <br />
+            Aclara tus decisiones.
+            <br />
+            Construye tu dirección.
+          </p>
+        </Reveal>
+        <Reveal delay={320}>
+          <div className="mt-14 flex justify-center">
+            <Cta>Quiero empezar</Cta>
+          </div>
+          <p className="mt-8 text-[0.68rem] tracking-[0.24em] text-muted-foreground uppercase">
+            $15 USD · 2 Ebooks · Garantía de 15 días
+          </p>
+        </Reveal>
+      </div>
     </Section>
   );
 }
