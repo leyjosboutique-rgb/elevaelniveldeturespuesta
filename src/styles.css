@@ -217,10 +217,9 @@
   font-optical-sizing: auto;
   font-variation-settings: "opsz" 144;
   font-weight: 600;
-  line-height: 1.04;
+  line-height: 1.1;
   letter-spacing: 0.005em;
   font-size: clamp(2.25rem, 1.4rem + 5vw, 5.75rem);
-  text-transform: uppercase;
 }
 
 @utility display-lg {
@@ -329,9 +328,11 @@
 
 @keyframes cta-glow {
   0%, 100% {
+    transform: scale(1);
     box-shadow: 0 4px 18px color-mix(in oklab, var(--gold) 0%, transparent);
   }
   50% {
+    transform: scale(1.035);
     box-shadow: 0 10px 32px color-mix(in oklab, var(--gold) 55%, transparent);
   }
 }
