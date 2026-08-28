@@ -123,9 +123,9 @@ export function Cta({
       href={href}
       data-checkout-cta
       className={cn(
-        "group inline-flex items-center justify-center gap-3 px-9 py-4 text-[0.72rem] font-semibold tracking-[0.22em] uppercase transition-all duration-500",
+        "group inline-flex items-center justify-center gap-3 px-9 py-4 font-serif text-base font-semibold tracking-normal transition-all duration-500",
         variant === "solid"
-          ? "bg-primary text-primary-foreground hover:bg-accent hover:text-accent-foreground"
+          ? "cta-glow bg-accent text-accent-foreground hover:brightness-110"
           : "border border-current text-foreground hover:border-accent hover:text-accent",
         className,
       )}
