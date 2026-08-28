@@ -7,7 +7,45 @@ import {
 } from "@/components/ui/accordion";
 import { Cta, Eyebrow, MediaFrame, Reveal, Section } from "./primitives";
 
-const testimonios = ["01", "02", "03", "04"];
+const testimonials = [
+  {
+    id: "margarita-valencia",
+    name: "Margarita Valencia",
+    location: "Chile",
+    rating: 5,
+    text: "Mi marido me dijo una vez 'parece que hablar conmigo es pisar una mina'. Me quedé helada, pero en el fondo sabía que tenía razón. Tengo una biblioteca entera de libros de autoayuda a medio leer, todos con el separador en la página 40 más o menos. Este lo terminé un domingo a la noche llorando, no de tristeza, sino porque por primera vez entendí que el problema no era él ni las discusiones. Era que yo contestaba antes de terminar de escuchar.",
+  },
+  {
+    id: "nohelia-ruiz",
+    name: "Nohelia Ruiz",
+    location: "Colombia",
+    rating: 5,
+    text: "Tengo dos hijos chicos y un trabajo que me deja sin energía para nada que no sea sobrevivir el día. Empecé este libro en el auto, esperando que salieran del colegio, cinco minutos acá, cinco minutos allá. Un jueves, mi hija de 7 me preguntó por qué siempre estoy 'con cara de enojada' cuando la busco. Esa noche no pude dormir. No por el libro. Por la pregunta de mi hija. El libro solo me dio las palabras para entender lo que ella ya había notado.",
+  },
+  {
+    id: "guadalupe-hernandez",
+    name: "Guadalupe Hernández",
+    location: "México",
+    rating: 4,
+    text: "Tengo 34 años y una lista de gimnasios, dietas y cursos online que empecé y dejé antes del mes. Cuando compré esto pensé 'otro más para la colección de cosas a medias'. Lo que cambió fue algo tonto: el cuaderno tenía un espacio para el día 17, y llegar hasta ahí y ver mi propia letra en las páginas anteriores me dio vergüenza de dejarlo. No fue disciplina. Fue no querer verme la cara en el espejo sabiendo que había abandonado otra cosa más.",
+  },
+  {
+    id: "luis-peralta",
+    name: "Luis Peralta",
+    location: "Argentina",
+    rating: 4,
+    text: "Yo no tengo depresión ni ansiedad ni nada de eso, para mí estas cosas eran para 'otro tipo de persona'. Lo que me hizo comprar fue una boludez: grité en la fila del supermercado porque una señora se coló, y después me quedé pensando en eso todo el día, como si esa señora me hubiera arruinado la tarde entera. Ese fue el momento en que entendí que no necesitaba estar mal para estar reaccionando mal todo el tiempo.",
+  },
+];
+
+function Stars({ count }: { count: number }) {
+  return (
+    <span aria-label={`${count} de 5 estrellas`} className="text-gold-soft tracking-[0.12em]">
+      {"★".repeat(count)}
+      <span className="text-gold-soft/30">{"★".repeat(5 - count)}</span>
+    </span>
+  );
+}
 
 export function Testimonios() {
   return (
@@ -22,8 +60,8 @@ export function Testimonios() {
       </Reveal>
 
       <div className="mt-20 grid gap-px sm:grid-cols-2">
-        {testimonios.map((n, i) => (
-          <Reveal key={n} delay={i * 100}>
+        {testimonials.map((t, i) => (
+          <Reveal key={t.id} delay={i * 100}>
             <article className="flex h-full flex-col gap-6 border-t border-line py-10 sm:pr-10">
               <div className="flex items-center gap-5">
                 <div className="frame relative grid size-16 shrink-0 place-items-center">
@@ -33,24 +71,16 @@ export function Testimonios() {
                   </span>
                 </div>
                 <div className="min-w-0">
-                  <p className="truncate text-sm tracking-[0.16em] uppercase">
-                    [ Testimonio real {n} ]
-                  </p>
-                  <p className="mt-1 text-xs text-muted-foreground">Nombre · Ciudad</p>
+                  <p className="truncate text-sm tracking-[0.16em] uppercase">{t.name}</p>
+                  <p className="mt-1 text-xs text-muted-foreground">{t.location}</p>
                 </div>
               </div>
-              <dl className="flex flex-col gap-4 text-sm">
-                {[
-                  ["Situación", "Espacio para describir el problema inicial."],
-                  ["Cambio", "Espacio para describir el cambio experimentado."],
-                  ["Resultado", "Espacio para describir el resultado obtenido."],
-                ].map(([k, v]) => (
-                  <div key={k}>
-                    <dt className="eyebrow">{k}</dt>
-                    <dd className="mt-1 leading-relaxed text-muted-foreground">{v}</dd>
-                  </div>
-                ))}
-              </dl>
+              <blockquote className="text-sm leading-relaxed text-muted-foreground">
+                "{t.text}"
+              </blockquote>
+              <div className="mt-auto pt-2">
+                <Stars count={t.rating} />
+              </div>
             </article>
           </Reveal>
         ))}
