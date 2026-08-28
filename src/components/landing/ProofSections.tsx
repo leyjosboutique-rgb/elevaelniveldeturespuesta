@@ -91,6 +91,39 @@ export function Testimonios() {
   );
 }
 
+function pad(n: number) {
+  return String(n).padStart(2, "0");
+}
+
+function OfertaCountdown() {
+  const [left, setLeft] = useState(15 * 60);
+
+  useEffect(() => {
+    const id = setInterval(() => setLeft((s) => (s > 0 ? s - 1 : 0)), 1000);
+    return () => clearInterval(id);
+  }, []);
+
+  const expired = left === 0;
+
+  return (
+    <div className="mt-14 flex flex-col items-center gap-3 border-y border-line py-8">
+      <p className="eyebrow">{expired ? "Oferta" : "Tu precio especial termina en"}</p>
+      <p
+        className="font-serif text-5xl tabular-nums md:text-6xl"
+        aria-live="polite"
+        aria-label="Tiempo restante en minutos y segundos"
+      >
+        {pad(Math.floor(left / 60))}
+        <span className="text-accent">:</span>
+        {pad(left % 60)}
+      </p>
+      <p className="text-[0.6rem] tracking-[0.28em] text-muted-foreground uppercase">
+        Minutos : Segundos
+      </p>
+    </div>
+  );
+}
+
 export function Oferta() {
   return (
     <Section id="oferta" dark className="py-28 md:py-40">
@@ -123,6 +156,10 @@ export function Oferta() {
           </div>
         </Reveal>
 
+        <Reveal delay={280}>
+          <OfertaCountdown />
+        </Reveal>
+
         <Reveal delay={300}>
           <p className="mt-12 font-serif text-6xl leading-none md:text-7xl">
             $15 <span className="align-super text-xl tracking-[0.2em]">USD</span>
@@ -133,57 +170,6 @@ export function Oferta() {
           <p className="mt-8 text-[0.68rem] tracking-[0.24em] text-muted-foreground uppercase">
             Garantía de 15 días · Compra segura
           </p>
-        </Reveal>
-      </div>
-    </Section>
-  );
-}
-
-function pad(n: number) {
-  return String(n).padStart(2, "0");
-}
-
-export function Contador() {
-  const [left, setLeft] = useState(15 * 60);
-
-  useEffect(() => {
-    const id = setInterval(() => setLeft((s) => (s > 0 ? s - 1 : 0)), 1000);
-    return () => clearInterval(id);
-  }, []);
-
-  const expired = left === 0;
-
-  return (
-    <Section className="border-y border-line bg-secondary">
-      <div className="mx-auto max-w-2xl text-center">
-        <Reveal>
-          <div className="flex justify-center">
-            <span className="eyebrow">{expired ? "Oferta" : "Precio especial"}</span>
-          </div>
-        </Reveal>
-        <Reveal delay={100}>
-          <h2 className="display-md mt-8 uppercase">
-            {expired ? "El precio de $15 USD sigue disponible hoy" : "Tu precio especial termina en:"}
-          </h2>
-        </Reveal>
-        <Reveal delay={160}>
-          <p
-            className="mt-12 font-serif text-6xl tabular-nums md:text-8xl"
-            aria-live="polite"
-            aria-label="Tiempo restante en minutos y segundos"
-          >
-            {pad(Math.floor(left / 60))}
-            <span className="text-accent">:</span>
-            {pad(left % 60)}
-          </p>
-          <p className="mt-5 text-[0.65rem] tracking-[0.3em] text-muted-foreground uppercase">
-            Minutos : Segundos
-          </p>
-        </Reveal>
-        <Reveal delay={220}>
-          <div className="mt-12 flex justify-center">
-            <Cta>Quiero aprovechar la oferta</Cta>
-          </div>
         </Reveal>
       </div>
     </Section>
