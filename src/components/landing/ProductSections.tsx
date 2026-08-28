@@ -1,12 +1,13 @@
 import { Cta, Eyebrow, MediaFrame, Reveal, Section } from "./primitives";
 import ebookUnoMockup from "@/assets/libro40dias.webp";
 import ebookDosMockup from "@/assets/libromente.webp";
+import conexionImage from "@/assets/conexion.webp";
 
 function BenefitList({ items }: { items: string[] }) {
   return (
-    <ul className="mt-10 divide-y divide-line border-y border-line">
+    <ul className="mx-auto mt-10 max-w-[46ch] divide-y divide-line border-y border-line lg:mx-0 lg:max-w-none">
       {items.map((b) => (
-        <li key={b} className="flex items-baseline gap-4 py-4">
+        <li key={b} className="flex items-baseline justify-center gap-4 py-4 lg:justify-start">
           <span aria-hidden className="h-px w-5 shrink-0 translate-y-[-0.3em] bg-accent" />
           <span className="text-sm tracking-wide md:text-base">{b}</span>
         </li>
@@ -35,7 +36,7 @@ export function EbookUno() {
             <h2 className="display-md mt-8 uppercase">40 días de viaje en silencio</h2>
           </Reveal>
           <Reveal delay={160}>
-            <p className="body-lg mt-6 max-w-[46ch]">
+            <p className="body-lg mx-auto mt-6 max-w-[46ch] lg:mx-0">
               Un recorrido práctico para trabajar tu mente, tus emociones y la forma en que
               respondes ante lo que ocurre a tu alrededor.
             </p>
@@ -69,7 +70,7 @@ export function EbookDos() {
             <h2 className="display-md mt-8 uppercase">Una mente vale más que un millón</h2>
           </Reveal>
           <Reveal delay={160}>
-            <p className="body-lg mt-6 max-w-[46ch]">
+            <p className="body-lg mx-auto mt-6 max-w-[46ch] lg:mx-0">
               Una guía para cambiar tu manera de pensar sobre el dinero, las oportunidades y las
               decisiones que construyen tu futuro.
             </p>
@@ -102,12 +103,12 @@ export function EbookDos() {
 export function Conexion() {
   return (
     <Section dark>
-      <div className="max-w-3xl">
+      <div className="mx-auto max-w-3xl lg:mx-0">
         <Reveal>
           <Eyebrow>La conexión</Eyebrow>
         </Reveal>
         <Reveal delay={100}>
-          <h2 className="display-lg mt-8 max-w-[14ch]">Una mente en calma piensa de otra manera.</h2>
+          <h2 className="display-lg mt-8 lg:max-w-[14ch]">Una mente en calma piensa de otra manera.</h2>
         </Reveal>
         <Reveal delay={180}>
           <p className="body-lg mt-8">
@@ -116,33 +117,15 @@ export function Conexion() {
             terminarán tomando muchas de tus decisiones.
           </p>
         </Reveal>
-        <Reveal delay={240}>
-          <p className="mt-8 text-lg italic">
-            Por eso estos dos libros trabajan desde dos direcciones diferentes.
-          </p>
-        </Reveal>
       </div>
 
-      <div className="mt-14 grid gap-12 md:mt-24 md:grid-cols-2">
-        {[
-          { t: "40 días de viaje en silencio", d: "Tu mundo interno" },
-          { t: "Una mente vale más que un millón", d: "Tu manera de pensar y decidir" },
-        ].map((c, i) => (
-          <Reveal key={c.t} delay={i * 140}>
-            <div className="border-t border-line pt-8">
-              <h3 className="text-lg tracking-[0.14em] uppercase">{c.t}</h3>
-              <span aria-hidden className="my-6 block h-10 w-px bg-gold-soft" />
-              <p className="eyebrow">{c.d}</p>
-            </div>
-          </Reveal>
-        ))}
-      </div>
-
-      <Reveal delay={160}>
-        <div className="mt-12 flex flex-col items-center text-center md:mt-20">
-          <span aria-hidden className="h-16 w-px bg-gold-soft" />
-          <p className="display-md mt-8">Tú</p>
-          <p className="eyebrow mt-4">Actúas desde un lugar diferente</p>
+      <Reveal delay={220}>
+        <div className="mx-auto mt-14 w-full max-w-[420px] md:mt-20">
+          <img
+            src={conexionImage}
+            alt="Por eso estos dos libros trabajan desde dos direcciones diferentes. 40 días de viaje en silencio: tu mundo interno. Una mente vale más que un millón: tu manera de pensar y decidir. Tú: actúas desde un lugar diferente."
+            className="h-auto w-full"
+          />
         </div>
       </Reveal>
     </Section>
@@ -173,10 +156,10 @@ export function Transformacion() {
         <Eyebrow>La transformación</Eyebrow>
       </Reveal>
       <Reveal delay={100}>
-        <h2 className="display-lg mt-8 max-w-[16ch]">No se trata de convertirte en otra persona.</h2>
+        <h2 className="display-lg mt-8 lg:max-w-[16ch]">No se trata de convertirte en otra persona.</h2>
       </Reveal>
       <Reveal delay={160}>
-        <p className="body-lg mt-6 max-w-[42ch] italic">
+        <p className="body-lg mx-auto mt-6 max-w-[42ch] italic lg:mx-0">
           Se trata de dejar de actuar automáticamente.
         </p>
       </Reveal>
@@ -224,18 +207,18 @@ export function Aplicacion() {
         <Eyebrow>Aplicación en la vida real</Eyebrow>
       </Reveal>
       <Reveal delay={100}>
-        <h2 className="display-lg mt-8 max-w-[16ch]">¿Dónde empieza a cambiar esto?</h2>
+        <h2 className="display-lg mt-8 lg:max-w-[16ch]">¿Dónde empieza a cambiar esto?</h2>
       </Reveal>
 
       <div className="mt-12 grid gap-px md:mt-20 md:grid-cols-3">
         {aplicaciones.map((a, i) => (
           <Reveal key={a.t} delay={i * 90}>
-            <article className="h-full border-t border-line py-9 md:pr-10">
+            <article className="flex h-full flex-col items-center border-t border-line py-9 text-center md:pr-10 lg:items-start lg:text-left">
               <span className="font-serif text-sm text-accent">
                 {String(i + 1).padStart(2, "0")}
               </span>
               <h3 className="mt-5 text-xl tracking-[0.16em] uppercase">{a.t}</h3>
-              <p className="mt-4 max-w-[32ch] text-sm leading-relaxed text-muted-foreground">
+              <p className="mx-auto mt-4 max-w-[32ch] text-sm leading-relaxed text-muted-foreground lg:mx-0">
                 {a.d}
               </p>
             </article>
@@ -259,7 +242,7 @@ export function Bonos() {
         <Eyebrow>Bonos incluidos</Eyebrow>
       </Reveal>
       <Reveal delay={100}>
-        <h2 className="display-md mt-8 max-w-[20ch] uppercase">
+        <h2 className="display-md mt-8 uppercase lg:max-w-[20ch]">
           Y para ayudarte a llevarlo a la práctica…
         </h2>
       </Reveal>
@@ -267,7 +250,7 @@ export function Bonos() {
       <div className="mt-10 grid gap-10 md:mt-16 md:grid-cols-3">
         {bonos.map((b, i) => (
           <Reveal key={b.t} delay={i * 110}>
-            <div>
+            <div className="flex flex-col items-center lg:items-start">
               <MediaFrame label={b.label} ratio="3 / 4" />
               <h3 className="mt-6 text-base tracking-[0.16em] uppercase">{b.t}</h3>
               <span className="rule-gold mt-4" />
