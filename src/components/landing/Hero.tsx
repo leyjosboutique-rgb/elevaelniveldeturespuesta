@@ -1,10 +1,39 @@
+import { useEffect, useState } from "react";
 import { Cta, MediaFrame, Reveal } from "./primitives";
 import heroMockup from "@/assets/hero.webp";
 
+function pad(n: number) {
+  return String(n).padStart(2, "0");
+}
+
+function TopBar() {
+  const [left, setLeft] = useState(15 * 60);
+
+  useEffect(() => {
+    const id = setInterval(() => setLeft((s) => (s > 0 ? s - 1 : 0)), 1000);
+    return () => clearInterval(id);
+  }, []);
+
+  return (
+    <div
+      className="sticky top-0 z-50 bg-accent px-4 py-2.5 text-center text-[0.68rem] font-semibold tracking-[0.16em] text-accent-foreground uppercase"
+      role="status"
+      aria-live="polite"
+    >
+      <span aria-hidden>✦</span> El precio de hoy termina en{" "}
+      <span className="tabular-nums">
+        {pad(Math.floor(left / 60))}:{pad(left % 60)}
+      </span>
+    </div>
+  );
+}
+
 export function Hero() {
   return (
-    <header className="relative overflow-hidden border-b border-line px-6 py-12 md:px-10 md:pt-20 md:pb-28">
-      <div className="hero-layout mx-auto w-full max-w-6xl text-center lg:text-left">
+    <>
+      <TopBar />
+      <header className="relative overflow-hidden border-b border-line px-6 py-12 md:px-10 md:pt-20 md:pb-28">
+        <div className="hero-layout mx-auto w-full max-w-6xl text-center lg:text-left">
         <Reveal className="hero-area-eyebrow">
           <div className="flex items-center justify-center gap-4 lg:justify-start">
             <span className="rule-gold" />
@@ -64,6 +93,7 @@ export function Hero() {
           </p>
         </Reveal>
       </div>
-    </header>
+      </header>
+    </>
   );
 }
