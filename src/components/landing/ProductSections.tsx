@@ -1,4 +1,6 @@
 import { Cta, Eyebrow, MediaFrame, Reveal, Section } from "./primitives";
+import ebookUnoMockup from "@/assets/libro40dias.webp";
+import ebookDosMockup from "@/assets/libromente.webp";
 
 function BenefitList({ items }: { items: string[] }) {
   return (
@@ -18,7 +20,12 @@ export function EbookUno() {
     <Section id="ebook-01">
       <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-24">
         <Reveal className="order-2 lg:order-1">
-          <MediaFrame label="Mockup ebook 01" caption="40 días de viaje en silencio" ratio="4 / 5" />
+          <MediaFrame
+            src={ebookUnoMockup}
+            alt="Portada de 40 días de viaje en silencio"
+            label="Mockup ebook 01"
+            ratio="4 / 5"
+          />
         </Reveal>
         <div className="order-1 lg:order-2">
           <Reveal>
@@ -81,8 +88,9 @@ export function EbookDos() {
         </div>
         <Reveal delay={120}>
           <MediaFrame
+            src={ebookDosMockup}
+            alt="Portada de Una mente vale más que un millón"
             label="Mockup ebook 02"
-            caption="Una mente vale más que un millón"
             ratio="4 / 5"
           />
         </Reveal>
