@@ -66,11 +66,12 @@ export function MediaFrame({
       role="img"
       aria-label={`Espacio reservado para ${label}`}
     >
+      <span aria-hidden className="pointer-events-none absolute inset-0 bg-background/85" />
       <span
         aria-hidden
         className="pointer-events-none absolute inset-3 border border-gold-soft"
       />
-      <span aria-hidden className="pointer-events-none absolute inset-0 bg-background/80" />
+
       <div className="relative flex flex-col items-center gap-3 px-6 text-center">
         <span className="rule-gold" />
         <span className="eyebrow">{label}</span>
