@@ -1,5 +1,6 @@
 import { Eyebrow, MediaFrame, Reveal, Section } from "./primitives";
 import claridadImage from "@/assets/claridad.webp";
+import costoImage from "@/assets/costo.webp";
 
 const situaciones = [
   {
@@ -73,48 +74,24 @@ export function Identificacion() {
 
 export function CostoInvisible() {
   return (
-    <Section dark>
-      <div className="grid gap-16 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-24">
-        <div>
-          <Reveal>
-            <Eyebrow>El costo invisible</Eyebrow>
-          </Reveal>
-          <Reveal delay={100}>
-            <h2 className="display-lg mt-8 lg:max-w-[16ch]">
-              Una reacción puede durar 10 segundos. Sus consecuencias, mucho más.
-            </h2>
-          </Reveal>
-
-          <Reveal delay={180}>
-            <ol className="mt-10 flex flex-col items-center gap-0 md:mt-16 lg:items-start">
-              {["Reacción", "Decisión", "Consecuencia"].map((step, i) => (
-                <li key={step} className="flex flex-col items-center lg:items-start">
-                  <span className="text-lg tracking-[0.3em] uppercase">{step}</span>
-                  {i < 2 && (
-                    <span aria-hidden className="my-4 h-10 w-px bg-gold-soft" />
-                  )}
-                </li>
-              ))}
-            </ol>
-          </Reveal>
-
-          <Reveal delay={240}>
-            <p className="body-lg mx-auto mt-10 max-w-[52ch] md:mt-16 lg:mx-0">
-              Una palabra puede cambiar una relación. Una decisión impulsiva puede costarte dinero.
-              Una respuesta desde el miedo puede hacerte abandonar una oportunidad. Y repetir el
-              mismo patrón durante años puede terminar convirtiéndose en una forma de vivir.
-            </p>
-          </Reveal>
-        </div>
-
-        <Reveal delay={200} className="self-center">
-          <MediaFrame
-            label="Imagen conceptual"
-            caption="Decisión / caminos"
-            ratio="4 / 5"
+    <Section dark className="py-16 md:py-24">
+      <Reveal>
+        <div className="relative mx-auto w-full max-w-[480px]">
+          <span
+            aria-hidden
+            className="absolute -top-6 -left-6 hidden h-20 w-20 border-t border-l border-gold-soft md:block"
           />
-        </Reveal>
-      </div>
+          <span
+            aria-hidden
+            className="absolute -right-6 -bottom-6 hidden h-20 w-20 border-r border-b border-gold-soft md:block"
+          />
+          <img
+            src={costoImage}
+            alt="El costo invisible. Una reacción puede durar 10 segundos. Sus consecuencias, mucho más. Reacción: impulsiva, automática, sin pensar. Decisión: consciente, alineada con lo que realmente quieres. Consecuencia: define tu presente y construye tu futuro. Una palabra puede cambiar una relación. Una decisión impulsiva puede costarte dinero. Una respuesta desde el miedo puede hacerte abandonar una oportunidad. Y repetir el mismo patrón durante años puede terminar convirtiéndose en una forma de vivir."
+            className="h-auto w-full shadow-[0_30px_70px_rgba(0,0,0,0.35)]"
+          />
+        </div>
+      </Reveal>
     </Section>
   );
 }
