@@ -184,8 +184,8 @@
   h2,
   h3 {
     font-family: var(--font-serif);
-    font-weight: 700;
-    letter-spacing: -0.015em;
+    font-weight: 600;
+    letter-spacing: -0.01em;
   }
 
   blockquote {
@@ -214,26 +214,32 @@
 
 @utility display-xl {
   font-family: var(--font-serif);
-  font-weight: 900;
-  line-height: 0.98;
-  letter-spacing: -0.02em;
+  font-optical-sizing: auto;
+  font-variation-settings: "opsz" 144;
+  font-weight: 600;
+  line-height: 1.04;
+  letter-spacing: 0.005em;
   font-size: clamp(2.25rem, 1.4rem + 5vw, 5.75rem);
   text-transform: uppercase;
 }
 
 @utility display-lg {
   font-family: var(--font-serif);
-  font-weight: 800;
-  line-height: 1.05;
-  letter-spacing: -0.015em;
+  font-optical-sizing: auto;
+  font-variation-settings: "opsz" 144;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: 0.005em;
   font-size: clamp(1.85rem, 1.15rem + 4vw, 4rem);
   text-transform: uppercase;
 }
 
 @utility display-md {
   font-family: var(--font-serif);
-  font-weight: 700;
-  line-height: 1.12;
+  font-optical-sizing: auto;
+  font-variation-settings: "opsz" 40;
+  font-weight: 600;
+  line-height: 1.16;
   font-size: clamp(1.6rem, 1.05rem + 2.8vw, 2.75rem);
 }
 
