@@ -1,4 +1,5 @@
 import { Eyebrow, MediaFrame, Reveal, Section } from "./primitives";
+import claridadImage from "@/assets/claridad.webp";
 
 const situaciones = [
   {
@@ -120,25 +121,16 @@ export function CostoInvisible() {
 
 export function Revelacion() {
   return (
-    <Section className="py-20 md:py-56">
-      <div className="mx-auto max-w-4xl text-center">
-        <Reveal>
-          <h2 className="display-lg">Tal vez no necesitas más motivación.</h2>
-        </Reveal>
-        <Reveal delay={300}>
-          <span aria-hidden className="mx-auto my-16 block h-20 w-px bg-gold-soft md:my-24" />
-        </Reveal>
-        <Reveal delay={420}>
-          <p className="display-lg text-accent italic normal-case">Necesitas más claridad.</p>
-        </Reveal>
-        <Reveal delay={520}>
-          <p className="body-lg mx-auto mt-12 max-w-[48ch] md:mt-20">
-            Cuando tu mente está saturada, cualquier problema parece más grande. Cuando estás
-            alterado, cualquier respuesta parece urgente. Y cuando todo parece urgente… terminas
-            tomando decisiones que después tienes que reparar.
-          </p>
-        </Reveal>
-      </div>
+    <Section className="py-16 md:py-24">
+      <Reveal>
+        <div className="mx-auto w-full max-w-[420px]">
+          <img
+            src={claridadImage}
+            alt="Tal vez no necesitas más motivación. Necesitas más claridad. Cuando tu mente está saturada, cualquier problema parece más grande. Cuando estás alterado, cualquier respuesta parece urgente. Y cuando todo parece urgente, terminas tomando decisiones que después tienes que reparar."
+            className="h-auto w-full"
+          />
+        </div>
+      </Reveal>
     </Section>
   );
 }
