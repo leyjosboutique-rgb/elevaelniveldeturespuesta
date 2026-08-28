@@ -44,18 +44,37 @@ export function Reveal({
   );
 }
 
-/** Elegant empty container reserved for a future image / mockup upload. */
+/**
+ * Reserved image container. Pass `src` once the real mockup/photo is
+ * available and it renders the image; without `src` it keeps showing the
+ * elegant placeholder so unfinished sections still look premium.
+ */
 export function MediaFrame({
   label,
   caption,
   ratio = "1 / 1",
   className,
+  src,
+  alt,
 }: {
   label: string;
   caption?: string;
   ratio?: string;
   className?: string;
+  src?: string;
+  alt?: string;
 }) {
+  if (src) {
+    return (
+      <div
+        className={cn("frame relative w-full overflow-hidden", className)}
+        style={{ aspectRatio: ratio }}
+      >
+        <img src={src} alt={alt ?? label} className="h-full w-full object-cover" />
+      </div>
+    );
+  }
+
   return (
     <div
       className={cn(
@@ -100,7 +119,7 @@ export function Cta({
   href?: string;
 }) {
   return (
-    <a
+    
       href={href}
       data-checkout-cta
       className={cn(
