@@ -91,7 +91,7 @@
   --muted: oklch(0.925 0.017 89);
   --muted-foreground: oklch(0.45 0.01 80);
   --accent: var(--gold);
-  --accent-foreground: oklch(0.196 0 0);
+  --accent-foreground: var(--ivory);
   --destructive: oklch(0.505 0.13 27);
   --destructive-foreground: var(--ivory);
   --border: oklch(0.196 0 0 / 12%);
@@ -300,6 +300,29 @@
 .hero-area-subtitle { grid-area: subtitle; }
 .hero-area-actions { grid-area: actions; }
 .hero-area-microcopy { grid-area: microcopy; }
+
+@keyframes cta-glow {
+  0%, 100% {
+    box-shadow: 0 4px 18px color-mix(in oklab, var(--gold) 0%, transparent);
+  }
+  50% {
+    box-shadow: 0 10px 32px color-mix(in oklab, var(--gold) 55%, transparent);
+  }
+}
+
+.cta-glow {
+  animation: cta-glow 2.6s ease-in-out infinite;
+}
+
+.cta-glow:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta-glow {
+    animation: none;
+  }
+}
 
 @keyframes reveal-up {
   from {
