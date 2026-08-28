@@ -61,7 +61,7 @@ export function Testimonios() {
         </h2>
       </Reveal>
 
-      <div className="mt-20 grid gap-px sm:grid-cols-2">
+      <div className="mt-12 grid gap-px sm:mt-20 sm:grid-cols-2">
         {testimonials.map((t, i) => (
           <Reveal key={t.id} delay={i * 100}>
             <article className="flex h-full flex-col gap-6 border-t border-line py-10 sm:pr-10">
@@ -283,7 +283,7 @@ export function Faq() {
 
 export function Cierre() {
   return (
-    <Section dark className="py-32 md:py-48">
+    <Section dark className="py-20 md:py-48">
       <div className="mx-auto max-w-3xl text-center">
         <Reveal>
           <h2 className="display-lg">Dentro de unos meses seguirás tomando decisiones.</h2>
