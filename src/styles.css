@@ -71,22 +71,22 @@
 
 :root {
   --radius: 0.125rem;
-  /* Editorial palette: #F5F1E8 ivory, #171717 ink, wine accent (was champagne) */
-  --ivory: oklch(0.955 0.017 89);
+  /* Editorial palette: marfil, ink, verde botella accent */
+  --ivory: oklch(0.970 0.007 88.6);
   --ink: oklch(0.196 0 0);
-  --gold: oklch(0.413 0.106 13.4);
-  --gold-soft: oklch(0.413 0.106 13.4 / 35%);
+  --gold: oklch(0.445 0.05 151.5);
+  --gold-soft: oklch(0.445 0.05 151.5 / 35%);
   --line: oklch(0.196 0 0 / 12%);
 
   --background: var(--ivory);
   --foreground: var(--ink);
-  --card: oklch(0.972 0.013 89);
+  --card: oklch(0.985 0.004 91.4);
   --card-foreground: var(--ink);
-  --popover: oklch(0.972 0.013 89);
+  --popover: oklch(0.985 0.004 91.4);
   --popover-foreground: var(--ink);
   --primary: var(--ink);
   --primary-foreground: var(--ivory);
-  --secondary: oklch(0.925 0.017 89);
+  --secondary: oklch(0.94 0.007 88.6);
   --secondary-foreground: var(--ink);
   --muted: oklch(0.925 0.017 89);
   --muted-foreground: oklch(0.45 0.01 80);
