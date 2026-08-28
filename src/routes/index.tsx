@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-
 import { Hero } from "@/components/landing/Hero";
 import {
   CostoInvisible,
@@ -17,17 +16,14 @@ import {
 } from "@/components/landing/ProductSections";
 import {
   Cierre,
-  Contador,
   Faq,
   Garantia,
   Oferta,
   Testimonios,
 } from "@/components/landing/ProofSections";
-
 const TITLE = "Deja de reaccionar a tu vida — Bundle de 2 ebooks";
 const DESCRIPTION =
   "Dos ebooks para controlar tus reacciones, pensar con claridad y tomar mejores decisiones sobre tu vida, tus relaciones, tu trabajo y tu dinero. $15 USD.";
-
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -60,7 +56,6 @@ export const Route = createFileRoute("/")({
   }),
   component: Index,
 });
-
 function Index() {
   return (
     <main className="bg-background text-foreground">
@@ -77,7 +72,6 @@ function Index() {
       <Bonos />
       <Testimonios />
       <Oferta />
-      <Contador />
       <Garantia />
       <Faq />
       <Cierre />
