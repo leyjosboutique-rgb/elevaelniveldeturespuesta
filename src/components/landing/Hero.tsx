@@ -82,7 +82,7 @@ export function Hero() {
 
         <Reveal delay={340} className="hero-area-actions">
           <div className="flex justify-center lg:justify-start">
-            <Cta>Quiero empezar ahora</Cta>
+            <Cta>Quiero dejar de reaccionar</Cta>
           </div>
         </Reveal>
 
