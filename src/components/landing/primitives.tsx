@@ -162,7 +162,7 @@ export function Section({
     <section
       id={id}
       className={cn(
-        "px-6 py-24 md:px-10 md:py-36",
+        "px-6 py-16 md:px-10 md:py-36",
         dark && "section-dark",
         className,
       )}
