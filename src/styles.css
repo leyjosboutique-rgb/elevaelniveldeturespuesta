@@ -21,7 +21,6 @@
 @theme inline {
   --font-serif: "Fraunces", ui-serif, Georgia, serif;
   --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
-  --font-hero: "Bodoni Moda", "Fraunces", ui-serif, Georgia, serif;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -75,8 +74,8 @@
   /* Editorial palette: marfil, ink, verde botella accent */
   --ivory: oklch(0.970 0.007 88.6);
   --ink: oklch(0.196 0 0);
-  --gold: oklch(0.517 0.105 159.6);
-  --gold-soft: oklch(0.517 0.105 159.6 / 35%);
+  --gold: oklch(0.643 0.159 154);
+  --gold-soft: oklch(0.643 0.159 154 / 35%);
   --line: oklch(0.196 0 0 / 12%);
 
   --background: var(--ivory);
@@ -214,11 +213,12 @@
 }
 
 @utility display-xl {
-  font-family: var(--font-hero);
+  font-family: var(--font-serif);
   font-optical-sizing: auto;
-  font-weight: 700;
+  font-variation-settings: "opsz" 144;
+  font-weight: 600;
   line-height: 1.04;
-  letter-spacing: 0em;
+  letter-spacing: 0.005em;
   font-size: clamp(2.25rem, 1.4rem + 5vw, 5.75rem);
   text-transform: uppercase;
 }
@@ -300,6 +300,32 @@
 .hero-area-subtitle { grid-area: subtitle; }
 .hero-area-actions { grid-area: actions; }
 .hero-area-microcopy { grid-area: microcopy; }
+
+@keyframes topbar-timer-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.06);
+  }
+}
+
+.topbar-timer {
+  display: inline-block;
+  animation: topbar-timer-pulse 1.6s ease-in-out infinite;
+}
+
+.topbar-timer.is-urgent {
+  animation-duration: 0.6s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .topbar-timer {
+    animation: none;
+  }
+}
 
 @keyframes cta-glow {
   0%, 100% {
