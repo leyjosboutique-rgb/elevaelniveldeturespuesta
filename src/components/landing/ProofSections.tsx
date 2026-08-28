@@ -307,7 +307,7 @@ export function Cierre() {
         </Reveal>
         <Reveal delay={320}>
           <div className="mt-14 flex justify-center">
-            <Cta>Quiero empezar</Cta>
+            <Cta>Quiero dejar de reaccionar</Cta>
           </div>
           <p className="mt-8 text-[0.68rem] tracking-[0.24em] text-muted-foreground uppercase">
             $15 USD · 2 Ebooks · Garantía de 15 días
