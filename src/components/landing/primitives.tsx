@@ -1,0 +1,153 @@
+import { useEffect, useRef, useState, type ReactNode } from "react";
+import { cn } from "@/lib/utils";
+
+/** Scroll-triggered reveal. Subtle fade + slide-up, once. */
+export function Reveal({
+  children,
+  delay = 0,
+  className,
+  as: Tag = "div",
+}: {
+  children: ReactNode;
+  delay?: number;
+  className?: string;
+  as?: "div" | "section" | "li" | "span" | "p";
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          io.disconnect();
+        }
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  const Component = Tag as "div";
+  return (
+    <Component
+      ref={ref}
+      className={cn("reveal", visible && "is-visible", className)}
+      style={{ animationDelay: `${delay}ms` }}
+    >
+      {children}
+    </Component>
+  );
+}
+
+/** Elegant empty container reserved for a future image / mockup upload. */
+export function MediaFrame({
+  label,
+  caption,
+  ratio = "1 / 1",
+  className,
+}: {
+  label: string;
+  caption?: string;
+  ratio?: string;
+  className?: string;
+}) {
+  return (
+    <div
+      className={cn(
+        "frame group relative flex w-full items-center justify-center overflow-hidden",
+        className,
+      )}
+      style={{ aspectRatio: ratio }}
+      role="img"
+      aria-label={`Espacio reservado para ${label}`}
+    >
+      <span
+        aria-hidden
+        className="pointer-events-none absolute inset-3 border border-gold-soft"
+      />
+      <span aria-hidden className="pointer-events-none absolute inset-0 bg-background/80" />
+      <div className="relative flex flex-col items-center gap-3 px-6 text-center">
+        <span className="rule-gold" />
+        <span className="eyebrow">{label}</span>
+        {caption ? (
+          <span className="max-w-[22ch] text-xs leading-relaxed text-muted-foreground">
+            {caption}
+          </span>
+        ) : null}
+      </div>
+    </div>
+  );
+}
+
+const CHECKOUT_URL = "#oferta";
+
+/** Primary call to action. Points to the offer anchor until checkout is wired. */
+export function Cta({
+  children,
+  variant = "solid",
+  className,
+  href = CHECKOUT_URL,
+}: {
+  children: ReactNode;
+  variant?: "solid" | "outline";
+  className?: string;
+  href?: string;
+}) {
+  return (
+    <a
+      href={href}
+      data-checkout-cta
+      className={cn(
+        "group inline-flex items-center justify-center gap-3 px-9 py-4 text-[0.72rem] font-semibold tracking-[0.22em] uppercase transition-all duration-500",
+        variant === "solid"
+          ? "bg-primary text-primary-foreground hover:bg-accent hover:text-accent-foreground"
+          : "border border-current text-foreground hover:border-accent hover:text-accent",
+        className,
+      )}
+    >
+      {children}
+      <span aria-hidden className="transition-transform duration-500 group-hover:translate-x-1">
+        →
+      </span>
+    </a>
+  );
+}
+
+export function Eyebrow({ children }: { children: ReactNode }) {
+  return (
+    <div className="flex items-center gap-4">
+      <span className="rule-gold" />
+      <span className="eyebrow">{children}</span>
+    </div>
+  );
+}
+
+export function Section({
+  children,
+  dark = false,
+  id,
+  className,
+}: {
+  children: ReactNode;
+  dark?: boolean;
+  id?: string;
+  className?: string;
+}) {
+  return (
+    <section
+      id={id}
+      className={cn(
+        "px-6 py-24 md:px-10 md:py-36",
+        dark && "section-dark",
+        className,
+      )}
+    >
+      <div className="mx-auto w-full max-w-6xl">{children}</div>
+    </section>
+  );
+}
