@@ -20,7 +20,7 @@ export function EbookUno() {
   return (
     <Section id="ebook-01">
       <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-24">
-        <Reveal className="order-2 lg:order-1">
+        <Reveal>
           <MediaFrame
             src={ebookUnoMockup}
             alt="Portada de 40 días de viaje en silencio"
@@ -28,7 +28,7 @@ export function EbookUno() {
             ratio="4 / 5"
           />
         </Reveal>
-        <div className="order-1 lg:order-2">
+        <div>
           <Reveal>
             <Eyebrow>Ebook 01</Eyebrow>
           </Reveal>
@@ -62,7 +62,7 @@ export function EbookDos() {
   return (
     <Section id="ebook-02" className="border-y border-line bg-secondary">
       <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-24">
-        <div>
+        <div className="order-2 lg:order-1">
           <Reveal>
             <Eyebrow>Ebook 02</Eyebrow>
           </Reveal>
@@ -87,7 +87,7 @@ export function EbookDos() {
             />
           </Reveal>
         </div>
-        <Reveal delay={120}>
+        <Reveal delay={120} className="order-1 lg:order-2">
           <MediaFrame
             src={ebookDosMockup}
             alt="Portada de Una mente vale más que un millón"
