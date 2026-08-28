@@ -3,21 +3,25 @@ import { Eyebrow, MediaFrame, Reveal, Section } from "./primitives";
 const situaciones = [
   {
     n: "01",
+    emoji: "⚡️",
     t: "Respondiste demasiado rápido.",
     d: "Después deseaste haber esperado.",
   },
   {
     n: "02",
+    emoji: "😰",
     t: "Tomaste una decisión bajo presión.",
     d: "Después viste lo que no habías visto antes.",
   },
   {
     n: "03",
+    emoji: "💔",
     t: "Dejaste que la emoción eligiera por ti.",
     d: "Y luego tuviste que lidiar con las consecuencias.",
   },
   {
     n: "04",
+    emoji: "😮‍💨",
     t: "Sabías que debías mantener la calma.",
     d: "Pero en ese momento parecía imposible.",
   },
@@ -40,7 +44,10 @@ export function Identificacion() {
         {situaciones.map((s, i) => (
           <Reveal key={s.n} delay={i * 90}>
             <article className="flex flex-col items-center gap-2 py-9 text-center lg:items-start lg:text-left">
-              <span className="font-serif text-sm text-accent">{s.n}</span>
+              <span className="flex items-center gap-2 font-serif text-sm text-accent">
+                <span aria-hidden>{s.emoji}</span>
+                {s.n}
+              </span>
               <p className="max-w-[46ch] text-lg leading-snug md:text-xl">{s.t}</p>
               <p className="max-w-[46ch] text-sm text-muted-foreground italic leading-relaxed md:text-base">
                 {s.d}
