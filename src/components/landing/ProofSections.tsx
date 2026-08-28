@@ -6,6 +6,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Cta, Eyebrow, MediaFrame, Reveal, Section } from "./primitives";
+import bundleMockup from "@/assets/hero.webp";
+import garantiaSello from "@/assets/garantia.webp";
 
 const testimonials = [
   {
@@ -106,7 +108,7 @@ export function Oferta() {
 
         <Reveal delay={180}>
           <div className="mx-auto mt-16 w-full max-w-[520px]">
-            <MediaFrame label="Mockup bundle" caption="Espacio reservado para el bundle" />
+            <MediaFrame src={bundleMockup} alt="Bundle: los dos ebooks juntos" label="Mockup bundle" />
           </div>
         </Reveal>
 
@@ -193,17 +195,12 @@ export function Garantia() {
     <Section>
       <div className="grid items-center gap-14 md:grid-cols-[minmax(0,0.7fr)_minmax(0,1fr)] md:gap-20">
         <Reveal>
-          <div className="frame relative mx-auto grid aspect-square w-full max-w-[300px] place-items-center rounded-full">
-            <span aria-hidden className="absolute inset-4 rounded-full border border-gold-soft" />
-            <span aria-hidden className="absolute inset-0 rounded-full bg-background/80" />
-            <div className="relative text-center">
-              <p className="font-serif text-5xl">15</p>
-              <p className="eyebrow mt-2">Días</p>
-              <span className="rule-gold mx-auto my-4" />
-              <p className="text-[0.6rem] tracking-[0.3em] text-muted-foreground uppercase">
-                Sello / Icono
-              </p>
-            </div>
+          <div className="frame relative mx-auto grid aspect-square w-full max-w-[300px] place-items-center overflow-hidden rounded-full">
+            <img
+              src={garantiaSello}
+              alt="Sello de garantía de 15 días"
+              className="h-full w-full object-cover"
+            />
           </div>
         </Reveal>
         <div>
