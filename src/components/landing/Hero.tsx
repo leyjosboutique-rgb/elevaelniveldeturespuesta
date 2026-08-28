@@ -4,9 +4,9 @@ import heroMockup from "@/assets/hero.webp";
 export function Hero() {
   return (
     <header className="relative overflow-hidden border-b border-line px-6 py-12 md:px-10 md:pt-20 md:pb-28">
-      <div className="hero-layout mx-auto w-full max-w-6xl">
+      <div className="hero-layout mx-auto w-full max-w-6xl text-center lg:text-left">
         <Reveal className="hero-area-eyebrow">
-          <div className="flex items-center gap-4">
+          <div className="flex items-center justify-center gap-4 lg:justify-start">
             <span className="rule-gold" />
             <span className="eyebrow">Calma · Claridad · Dirección</span>
           </div>
@@ -40,14 +40,14 @@ export function Hero() {
         </Reveal>
 
         <Reveal delay={240} className="hero-area-subtitle">
-          <p className="body-lg max-w-[46ch]">
+          <p className="body-lg mx-auto max-w-[46ch] lg:mx-0">
             Aprende a controlar tus reacciones, pensar con mayor claridad y tomar mejores
             decisiones sobre tu vida, tus relaciones, tu trabajo y tu dinero.
           </p>
         </Reveal>
 
         <Reveal delay={340} className="hero-area-actions">
-          <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center">
+          <div className="flex flex-col items-center gap-6 sm:flex-row sm:justify-center lg:items-center lg:justify-start">
             <Cta>Quiero empezar ahora</Cta>
             <div className="flex items-baseline gap-3">
               <span className="font-serif text-4xl leading-none">$15</span>
