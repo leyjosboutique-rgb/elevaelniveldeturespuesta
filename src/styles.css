@@ -71,11 +71,11 @@
 
 :root {
   --radius: 0.125rem;
-  /* Editorial palette: #F5F1E8 ivory, #171717 ink, #B49A68 champagne */
+  /* Editorial palette: #F5F1E8 ivory, #171717 ink, wine accent (was champagne) */
   --ivory: oklch(0.955 0.017 89);
   --ink: oklch(0.196 0 0);
-  --gold: oklch(0.685 0.058 78);
-  --gold-soft: oklch(0.685 0.058 78 / 35%);
+  --gold: oklch(0.413 0.106 13.4);
+  --gold-soft: oklch(0.413 0.106 13.4 / 35%);
   --line: oklch(0.196 0 0 / 12%);
 
   --background: var(--ivory);
@@ -112,14 +112,14 @@
   --sidebar-ring: var(--gold);
 }
 
-/* Dark editorial sections (#1D1C1A) — applied per-section via .section-dark */
+/* Dark editorial sections (wine-black) — applied per-section via .section-dark */
 .section-dark {
-  --background: oklch(0.208 0.004 80);
+  --background: oklch(0.198 0.024 10.1);
   --foreground: oklch(0.955 0.017 89);
-  --muted-foreground: oklch(0.72 0.012 85);
+  --muted-foreground: oklch(0.72 0.02 20);
   --border: oklch(0.955 0.017 89 / 15%);
   --line: oklch(0.955 0.017 89 / 15%);
-  --card: oklch(0.245 0.004 80);
+  --card: oklch(0.245 0.024 10.1);
   --card-foreground: oklch(0.955 0.017 89);
   --primary: oklch(0.955 0.017 89);
   --primary-foreground: oklch(0.196 0 0);
@@ -176,6 +176,7 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
+    font-variant-numeric: lining-nums;
     -webkit-font-smoothing: antialiased;
   }
 
@@ -209,26 +210,26 @@
 @utility display-xl {
   font-family: var(--font-serif);
   font-weight: 300;
-  line-height: 0.98;
+  line-height: 1.03;
   letter-spacing: -0.02em;
-  font-size: clamp(2.5rem, 8vw, 5.75rem);
+  font-size: clamp(2.25rem, 1.4rem + 5vw, 5.75rem);
   text-transform: uppercase;
 }
 
 @utility display-lg {
   font-family: var(--font-serif);
   font-weight: 300;
-  line-height: 1.03;
+  line-height: 1.12;
   letter-spacing: -0.015em;
-  font-size: clamp(2rem, 5.5vw, 4rem);
+  font-size: clamp(1.85rem, 1.15rem + 4vw, 4rem);
   text-transform: uppercase;
 }
 
 @utility display-md {
   font-family: var(--font-serif);
   font-weight: 300;
-  line-height: 1.1;
-  font-size: clamp(1.75rem, 3.6vw, 2.75rem);
+  line-height: 1.18;
+  font-size: clamp(1.6rem, 1.05rem + 2.8vw, 2.75rem);
 }
 
 @utility body-lg {
