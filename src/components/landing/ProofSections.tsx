@@ -115,7 +115,7 @@ function OfertaCountdown() {
   const expired = left === 0;
 
   return (
-    <div className="mt-14 flex flex-col items-center gap-3 border-y border-line py-8">
+    <div className="mt-10 flex flex-col items-center gap-3 border-y border-line py-8">
       <p className="eyebrow">{expired ? "Oferta" : "Tu precio especial termina en"}</p>
       <p
         className="font-serif text-5xl tabular-nums md:text-6xl"
@@ -166,16 +166,22 @@ export function Oferta() {
         </Reveal>
 
         <Reveal delay={280}>
-          <OfertaCountdown />
+          <div className="mt-14 flex justify-center">
+            <Cta>Quiero dejar de reaccionar</Cta>
+          </div>
         </Reveal>
 
         <Reveal delay={300}>
-          <p className="mt-12 font-serif text-6xl leading-none md:text-7xl">
+          <p className="mt-10 font-serif text-6xl leading-none md:text-7xl">
             $15 <span className="align-super text-xl tracking-[0.2em]">USD</span>
           </p>
-          <div className="mt-10 flex justify-center">
-            <Cta>Quiero los dos ebooks</Cta>
-          </div>
+        </Reveal>
+
+        <Reveal delay={320}>
+          <OfertaCountdown />
+        </Reveal>
+
+        <Reveal delay={340}>
           <p className="mt-8 text-[0.68rem] tracking-[0.24em] text-muted-foreground uppercase">
             Garantía de 15 días · Compra segura
           </p>
