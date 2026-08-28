@@ -118,9 +118,8 @@ export function Cta({
   className?: string;
   href?: string;
 }) {
-  const tagOpen = "a";
   return (
-    
+    <a
       href={href}
       data-checkout-cta
       className={cn(
