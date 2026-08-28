@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { cn } from "@/lib/utils";
 import { Cta, MediaFrame, Reveal } from "./primitives";
 import heroMockup from "@/assets/hero.webp";
 
@@ -8,6 +9,7 @@ function pad(n: number) {
 
 function TopBar() {
   const [left, setLeft] = useState(15 * 60);
+  const urgent = left <= 60;
 
   useEffect(() => {
     const id = setInterval(() => setLeft((s) => (s > 0 ? s - 1 : 0)), 1000);
@@ -16,12 +18,15 @@ function TopBar() {
 
   return (
     <div
-      className="sticky top-0 z-50 bg-accent px-4 py-2.5 text-center text-[0.68rem] font-semibold tracking-[0.16em] text-accent-foreground uppercase"
+      className={cn(
+        "sticky top-0 z-50 px-4 py-2.5 text-center text-[0.68rem] font-semibold tracking-[0.16em] uppercase transition-colors duration-500",
+        urgent ? "bg-destructive text-destructive-foreground" : "bg-accent text-accent-foreground",
+      )}
       role="status"
       aria-live="polite"
     >
       <span aria-hidden>✦</span> El precio de hoy termina en{" "}
-      <span className="tabular-nums">
+      <span className={cn("topbar-timer tabular-nums", urgent && "is-urgent")}>
         {pad(Math.floor(left / 60))}:{pad(left % 60)}
       </span>
     </div>
@@ -42,11 +47,11 @@ export function Hero() {
         </Reveal>
 
         <Reveal delay={120} className="hero-area-title">
-          <h1 className="display-xl">
+          <h1 className="display-xl italic normal-case">
             Deja de reaccionar
             <br />a tu vida.
             <br />
-            <span className="italic normal-case text-accent">Y empieza a dirigirla.</span>
+            <span className="text-accent">Y empieza a dirigirla.</span>
           </h1>
         </Reveal>
 
@@ -76,14 +81,8 @@ export function Hero() {
         </Reveal>
 
         <Reveal delay={340} className="hero-area-actions">
-          <div className="flex flex-col items-center gap-6 sm:flex-row sm:justify-center lg:items-center lg:justify-start">
+          <div className="flex justify-center lg:justify-start">
             <Cta>Quiero empezar ahora</Cta>
-            <div className="flex items-baseline gap-3">
-              <span className="font-serif text-4xl leading-none">$15</span>
-              <span className="text-xs tracking-[0.2em] text-muted-foreground uppercase">
-                USD
-              </span>
-            </div>
           </div>
         </Reveal>
 
