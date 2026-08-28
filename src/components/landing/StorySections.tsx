@@ -121,13 +121,21 @@ export function CostoInvisible() {
 
 export function Revelacion() {
   return (
-    <Section className="py-16 md:py-24">
+    <Section className="py-20 md:py-32">
       <Reveal>
-        <div className="mx-auto w-full max-w-[420px]">
+        <div className="relative mx-auto w-full max-w-[480px]">
+          <span
+            aria-hidden
+            className="absolute -top-6 -left-6 hidden h-20 w-20 border-t border-l border-gold-soft md:block"
+          />
+          <span
+            aria-hidden
+            className="absolute -right-6 -bottom-6 hidden h-20 w-20 border-r border-b border-gold-soft md:block"
+          />
           <img
             src={claridadImage}
             alt="Tal vez no necesitas más motivación. Necesitas más claridad. Cuando tu mente está saturada, cualquier problema parece más grande. Cuando estás alterado, cualquier respuesta parece urgente. Y cuando todo parece urgente, terminas tomando decisiones que después tienes que reparar."
-            className="h-auto w-full"
+            className="h-auto w-full shadow-[0_30px_70px_rgba(0,0,0,0.14)]"
           />
         </div>
       </Reveal>
