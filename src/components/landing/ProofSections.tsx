@@ -8,6 +8,10 @@ import {
 import { Cta, Eyebrow, MediaFrame, Reveal, Section } from "./primitives";
 import bundleMockup from "@/assets/hero.webp";
 import garantiaSello from "@/assets/garantia.webp";
+import testimonioMargarita from "@/assets/testimonio-t1.webp";
+import testimonioGuadalupe from "@/assets/testimonio-t2.webp";
+import testimonioNohelia from "@/assets/testimonio-t3.webp";
+import testimonioLuis from "@/assets/testimonio-luis.webp";
 
 const testimonials = [
   {
@@ -15,6 +19,7 @@ const testimonials = [
     name: "Margarita Valencia",
     location: "Chile",
     rating: 5,
+    photo: testimonioMargarita,
     text: "Mi marido me dijo una vez 'parece que hablar conmigo es pisar una mina'. Me quedé helada, pero en el fondo sabía que tenía razón. Tengo una biblioteca entera de libros de autoayuda a medio leer, todos con el separador en la página 40 más o menos. Este lo terminé un domingo a la noche llorando, no de tristeza, sino porque por primera vez entendí que el problema no era él ni las discusiones. Era que yo contestaba antes de terminar de escuchar.",
   },
   {
@@ -22,6 +27,7 @@ const testimonials = [
     name: "Nohelia Ruiz",
     location: "Colombia",
     rating: 5,
+    photo: testimonioNohelia,
     text: "Tengo dos hijos chicos y un trabajo que me deja sin energía para nada que no sea sobrevivir el día. Empecé este libro en el auto, esperando que salieran del colegio, cinco minutos acá, cinco minutos allá. Un jueves, mi hija de 7 me preguntó por qué siempre estoy 'con cara de enojada' cuando la busco. Esa noche no pude dormir. No por el libro. Por la pregunta de mi hija. El libro solo me dio las palabras para entender lo que ella ya había notado.",
   },
   {
@@ -29,12 +35,14 @@ const testimonials = [
     name: "Guadalupe Hernández",
     location: "México",
     rating: 4,
+    photo: testimonioGuadalupe,
     text: "Tengo 34 años y una lista de gimnasios, dietas y cursos online que empecé y dejé antes del mes. Cuando compré esto pensé 'otro más para la colección de cosas a medias'. Lo que cambió fue algo tonto: el cuaderno tenía un espacio para el día 17, y llegar hasta ahí y ver mi propia letra en las páginas anteriores me dio vergüenza de dejarlo. No fue disciplina. Fue no querer verme la cara en el espejo sabiendo que había abandonado otra cosa más.",
   },
   {
     id: "luis-peralta",
     name: "Luis Peralta",
     location: "Argentina",
+    photo: testimonioLuis,
     rating: 4,
     text: "Yo no tengo depresión ni ansiedad ni nada de eso, para mí estas cosas eran para 'otro tipo de persona'. Lo que me hizo comprar fue una boludez: grité en la fila del supermercado porque una señora se coló, y después me quedé pensando en eso todo el día, como si esa señora me hubiera arruinado la tarde entera. Ese fue el momento en que entendí que no necesitaba estar mal para estar reaccionando mal todo el tiempo.",
   },
@@ -66,11 +74,12 @@ export function Testimonios() {
           <Reveal key={t.id} delay={i * 100}>
             <article className="flex h-full flex-col gap-6 border-t border-line py-10 sm:pr-10">
               <div className="flex items-center gap-5">
-                <div className="frame relative grid size-16 shrink-0 place-items-center">
-                  <span aria-hidden className="absolute inset-0 bg-background/80" />
-                  <span className="relative text-[0.55rem] tracking-[0.18em] text-muted-foreground uppercase">
-                    Foto
-                  </span>
+                <div className="frame relative size-16 shrink-0 overflow-hidden rounded-full">
+                  <img
+                    src={t.photo}
+                    alt={`Foto de ${t.name}`}
+                    className="h-full w-full object-cover"
+                  />
                 </div>
                 <div className="min-w-0">
                   <p className="truncate text-sm tracking-[0.16em] uppercase">{t.name}</p>
