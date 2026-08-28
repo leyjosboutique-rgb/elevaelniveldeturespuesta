@@ -261,7 +261,7 @@ export function Bonos() {
 
       <Reveal delay={120}>
         <div className="mt-16">
-          <Cta variant="outline">Quiero empezar ahora</Cta>
+          <Cta variant="outline">Quiero dejar de reaccionar</Cta>
         </div>
       </Reveal>
     </Section>
