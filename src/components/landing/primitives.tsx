@@ -118,7 +118,7 @@ export function Cta({
   className?: string;
   href?: string;
 }) {
-  return (
+    return (
     
       href={href}
       data-checkout-cta
