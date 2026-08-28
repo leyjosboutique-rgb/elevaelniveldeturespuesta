@@ -17,7 +17,7 @@ export function Hero() {
             Deja de reaccionar
             <br />a tu vida.
             <br />
-            <span className="italic normal-case text-accent">Empieza a dirigirla.</span>
+            <span className="italic normal-case text-accent">Y empieza a dirigirla.</span>
           </h1>
         </Reveal>
 
