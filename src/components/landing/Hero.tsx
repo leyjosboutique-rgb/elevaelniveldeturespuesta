@@ -1,4 +1,5 @@
 import { Cta, MediaFrame, Reveal } from "./primitives";
+import heroMockup from "@/assets/hero.webp";
 
 export function Hero() {
   return (
@@ -58,8 +59,9 @@ export function Hero() {
               className="absolute -right-6 -bottom-6 hidden h-24 w-24 border-r border-b border-gold-soft md:block"
             />
             <MediaFrame
+              src={heroMockup}
+              alt="Los dos ebooks: 40 días de viaje en silencio y Una mente vale más que un millón"
               label="Mockup del producto"
-              caption="Espacio reservado para el mockup de los dos ebooks"
             />
           </div>
         </Reveal>
