@@ -36,7 +36,7 @@ export function Identificacion() {
         </h2>
       </Reveal>
 
-      <div className="mt-20 divide-y divide-line border-t border-line">
+      <div className="mt-12 divide-y divide-line border-t border-line md:mt-20">
         {situaciones.map((s, i) => (
           <Reveal key={s.n} delay={i * 90}>
             <article className="grid grid-cols-[auto_minmax(0,1fr)] items-baseline gap-x-6 gap-y-2 py-9 md:grid-cols-[5rem_16rem_minmax(0,1fr)]">
@@ -51,7 +51,7 @@ export function Identificacion() {
       </div>
 
       <Reveal delay={120}>
-        <blockquote className="mt-20 max-w-[38ch] border-l border-accent pl-8 text-2xl leading-snug md:text-3xl">
+        <blockquote className="mt-14 max-w-[38ch] border-l border-accent pl-8 text-2xl leading-snug md:mt-20 md:text-3xl">
           El problema no siempre es que no sepas qué hacer. Muchas veces sabes exactamente qué
           hacer. Lo difícil es hacerlo cuando estás bajo presión.
         </blockquote>
@@ -75,7 +75,7 @@ export function CostoInvisible() {
           </Reveal>
 
           <Reveal delay={180}>
-            <ol className="mt-16 flex flex-col gap-0">
+            <ol className="mt-10 flex flex-col gap-0 md:mt-16">
               {["Reacción", "Decisión", "Consecuencia"].map((step, i) => (
                 <li key={step} className="flex flex-col">
                   <span className="text-lg tracking-[0.3em] uppercase">{step}</span>
@@ -88,7 +88,7 @@ export function CostoInvisible() {
           </Reveal>
 
           <Reveal delay={240}>
-            <p className="body-lg mt-16 max-w-[52ch]">
+            <p className="body-lg mt-10 max-w-[52ch] md:mt-16">
               Una palabra puede cambiar una relación. Una decisión impulsiva puede costarte dinero.
               Una respuesta desde el miedo puede hacerte abandonar una oportunidad. Y repetir el
               mismo patrón durante años puede terminar convirtiéndose en una forma de vivir.
@@ -110,7 +110,7 @@ export function CostoInvisible() {
 
 export function Revelacion() {
   return (
-    <Section className="py-32 md:py-56">
+    <Section className="py-20 md:py-56">
       <div className="mx-auto max-w-4xl text-center">
         <Reveal>
           <h2 className="display-lg">Tal vez no necesitas más motivación.</h2>
@@ -122,7 +122,7 @@ export function Revelacion() {
           <p className="display-lg text-accent italic normal-case">Necesitas más claridad.</p>
         </Reveal>
         <Reveal delay={520}>
-          <p className="body-lg mx-auto mt-20 max-w-[48ch]">
+          <p className="body-lg mx-auto mt-12 max-w-[48ch] md:mt-20">
             Cuando tu mente está saturada, cualquier problema parece más grande. Cuando estás
             alterado, cualquier respuesta parece urgente. Y cuando todo parece urgente… terminas
             tomando decisiones que después tienes que reparar.
@@ -163,7 +163,7 @@ export function Mecanismo() {
         </h2>
       </Reveal>
 
-      <div className="mt-20 grid gap-px border-t border-line md:grid-cols-3 md:border-t-0">
+      <div className="mt-12 grid gap-px border-t border-line md:mt-20 md:grid-cols-3 md:border-t-0">
         {etapas.map((e, i) => (
           <Reveal key={e.n} delay={i * 120}>
             <article className="h-full border-line px-0 py-10 md:border-l md:px-10 md:py-2 md:first:border-l-0 md:first:pl-0">
