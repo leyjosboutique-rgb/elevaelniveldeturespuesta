@@ -317,6 +317,25 @@
   animation: topbar-timer-pulse 1.6s ease-in-out infinite;
 }
 
+@keyframes topbar-glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 16px 0 color-mix(in oklab, var(--cta-yellow) 0%, transparent);
+  }
+  50% {
+    box-shadow: 0 0 26px 4px color-mix(in oklab, var(--cta-yellow) 85%, transparent);
+  }
+}
+
+.topbar-glow {
+  animation: topbar-glow-pulse 1.6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .topbar-glow {
+    animation: none;
+  }
+}
+
 .topbar-timer.is-urgent {
   animation-duration: 0.6s;
 }
