@@ -75,6 +75,7 @@
   --ivory: oklch(0.970 0.007 88.6);
   --ink: oklch(0.196 0 0);
   --gold: oklch(0.697 0.128 80.8);
+  --cta-yellow: oklch(0.775 0.163 76.2);
   --gold-soft: oklch(0.697 0.128 80.8 / 35%);
   --line: oklch(0.196 0 0 / 12%);
 
@@ -112,14 +113,14 @@
   --sidebar-ring: var(--gold);
 }
 
-/* Dark editorial sections (warm brown-black, matches the generated images) — applied per-section via .section-dark */
+/* Dark editorial sections (pure neutral black) — applied per-section via .section-dark */
 .section-dark {
-  --background: oklch(0.199 0.019 62.6);
+  --background: oklch(0.145 0 0);
   --foreground: oklch(0.955 0.017 89);
-  --muted-foreground: oklch(0.72 0.02 60);
+  --muted-foreground: oklch(0.72 0 0);
   --border: oklch(0.955 0.017 89 / 15%);
   --line: oklch(0.955 0.017 89 / 15%);
-  --card: oklch(0.249 0.026 66.2);
+  --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.955 0.017 89);
   --primary: oklch(0.955 0.017 89);
   --primary-foreground: oklch(0.196 0 0);
@@ -326,27 +327,54 @@
   }
 }
 
-@keyframes cta-glow {
+@keyframes cta-scale {
   0%, 100% {
     transform: scale(1);
-    box-shadow: 0 4px 18px color-mix(in oklab, var(--gold) 0%, transparent);
   }
   50% {
     transform: scale(1.035);
-    box-shadow: 0 10px 32px color-mix(in oklab, var(--gold) 55%, transparent);
+  }
+}
+
+@keyframes cta-glow-pulse {
+  0%, 100% {
+    opacity: 0.45;
+    transform: scale(0.92);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.08);
   }
 }
 
 .cta-glow {
-  animation: cta-glow 2.6s ease-in-out infinite;
+  position: relative;
+  isolation: isolate;
+  animation: cta-scale 2.6s ease-in-out infinite;
+}
+
+.cta-glow::before {
+  content: "";
+  position: absolute;
+  inset: -18px;
+  z-index: -1;
+  border-radius: inherit;
+  background: var(--cta-yellow);
+  filter: blur(22px);
+  animation: cta-glow-pulse 2.6s ease-in-out infinite;
 }
 
 .cta-glow:hover {
   animation-play-state: paused;
 }
 
+.cta-glow:hover::before {
+  animation-play-state: paused;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .cta-glow {
+  .cta-glow,
+  .cta-glow::before {
     animation: none;
   }
 }
