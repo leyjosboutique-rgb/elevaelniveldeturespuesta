@@ -116,7 +116,7 @@ function OfertaCountdown() {
 
   return (
     <div className="mt-10 flex flex-col items-center gap-3 border-y border-line py-8">
-      <p className="eyebrow">{expired ? "Oferta" : "Tu precio especial termina en"}</p>
+      <p className="eyebrow">{expired ? "Oferta" : "Precio especial disponible por"}</p>
       <p
         className="font-serif text-5xl tabular-nums md:text-6xl"
         aria-live="polite"
@@ -144,7 +144,7 @@ export function Oferta() {
         </Reveal>
         <Reveal delay={100}>
           <h2 className="display-lg mt-8">
-            Dos libros. <span className="italic normal-case text-accent">Una nueva forma de pensar.</span>
+            Todo esto por <span className="italic normal-case text-accent">$15 USD.</span>
           </h2>
         </Reveal>
 
@@ -155,19 +155,25 @@ export function Oferta() {
         </Reveal>
 
         <Reveal delay={240}>
-          <div className="mt-14 flex flex-col items-center gap-4 border-y border-line py-10">
-            <p className="text-base tracking-[0.16em] uppercase">40 días de viaje en silencio</p>
-            <span className="font-serif text-2xl text-accent">+</span>
-            <p className="text-base tracking-[0.16em] uppercase">
-              Una mente vale más que un millón
-            </p>
-            <p className="eyebrow mt-4">Bonos incluidos</p>
-          </div>
+          <ul className="mx-auto mt-14 flex max-w-[380px] flex-col gap-4 border-y border-line py-10 text-left">
+            {[
+              "40 Días de Viaje en Silencio",
+              "Una Mente Vale Más que un Millón",
+              "Todos los bonos",
+              "Acceso digital inmediato",
+              "15 días de garantía",
+            ].map((item) => (
+              <li key={item} className="flex items-baseline gap-3 text-base">
+                <span className="font-serif text-accent">✓</span>
+                {item}
+              </li>
+            ))}
+          </ul>
         </Reveal>
 
         <Reveal delay={280}>
           <div className="mt-14 flex justify-center">
-            <Cta>Quiero dejar de reaccionar</Cta>
+            <Cta>Quiero empezar a dirigir mi vida</Cta>
           </div>
         </Reveal>
 
@@ -209,12 +215,12 @@ export function Garantia() {
             <Eyebrow>Garantía</Eyebrow>
           </Reveal>
           <Reveal delay={100}>
-            <h2 className="display-md mt-8 uppercase">Puedes decidir con tranquilidad.</h2>
+            <h2 className="display-md mt-8 uppercase">Pruébalo sin asumir todo el riesgo.</h2>
           </Reveal>
           <Reveal delay={160}>
             <p className="body-lg mx-auto mt-6 max-w-[50ch] lg:mx-0">
-              Adquiere los ebooks, conoce el contenido y descubre si son adecuados para ti. Si
-              dentro de los primeros 15 días decides que no es para ti, podrás solicitar tu garantía
+              Tienes 15 días de garantía para conocer el material y decidir si realmente es para
+              ti. Si dentro de ese plazo sientes que no es para ti, podrás solicitar tu garantía
               de acuerdo con nuestras condiciones.
             </p>
           </Reveal>
@@ -242,8 +248,20 @@ const faqs = [
     a: "Sí. El bundle incluye 40 días de viaje en silencio y Una mente vale más que un millón, junto con los bonos.",
   },
   {
-    q: "¿Qué sucede después de comprar?",
-    a: "Recibes la confirmación y el acceso digital para comenzar de inmediato, a tu propio ritmo.",
+    q: "¿Por qué necesito los dos libros?",
+    a: "Porque trabajan dos partes diferentes del mismo proceso: primero gestionar tu reacción y después mejorar tus decisiones.",
+  },
+  {
+    q: "¿Tengo que leerlos en orden?",
+    a: "Recomendamos comenzar con 40 Días de Viaje en Silencio y después pasar a Una Mente Vale Más que un Millón, pero puedes consultar ambos según lo que estés trabajando.",
+  },
+  {
+    q: "¿Y si ya he leído libros de desarrollo personal?",
+    a: "Aquí no se trata solamente de acumular información. El primer libro propone un proceso de 40 días para llevar las ideas a la práctica, mientras el segundo trabaja tu manera de pensar sobre decisiones, dinero y oportunidades.",
+  },
+  {
+    q: "¿Cuándo recibo los libros?",
+    a: "Inmediatamente después de completar tu compra.",
   },
   {
     q: "¿Cómo funciona la garantía?",
@@ -287,22 +305,26 @@ export function Cierre() {
     <Section dark className="py-20 md:py-48">
       <div className="mx-auto max-w-3xl text-center">
         <Reveal>
-          <h2 className="display-lg">Dentro de unos meses seguirás tomando decisiones.</h2>
+          <h2 className="display-lg">
+            Dentro de unos meses vas a seguir tomando decisiones.{" "}
+            <span className="italic normal-case text-accent">
+              La pregunta es: ¿las tomarás desde el mismo lugar que hoy?
+            </span>
+          </h2>
         </Reveal>
         <Reveal delay={160}>
           <p className="body-lg mx-auto mt-12 max-w-[46ch]">
-            Algunas serán pequeñas. Otras cambiarán cosas importantes. La pregunta no es si vas a
-            enfrentarlas. La pregunta es desde qué lugar vas a enfrentarlas.
+            No puedes controlar todo lo que sucede. Pero sí puedes trabajar en cómo respondes.
           </p>
         </Reveal>
         <Reveal delay={240}>
           <span aria-hidden className="mx-auto my-16 block h-16 w-px bg-gold-soft" />
           <p className="display-md text-accent">
-            Calma tu mente.
+            Primero calma.
             <br />
-            Aclara tus decisiones.
+            Después claridad.
             <br />
-            Construye tu dirección.
+            Luego dirección.
           </p>
         </Reveal>
         <Reveal delay={320}>
