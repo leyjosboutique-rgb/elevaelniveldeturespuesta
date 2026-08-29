@@ -26,7 +26,7 @@ export function EbookUno() {
         </Reveal>
         <Reveal delay={100}>
           <h2 className="display-md mt-8 uppercase">
-            40 días para dejar de explotar y empezar a elegir
+            No son dos libros separados. Son dos partes del mismo proceso.
           </h2>
         </Reveal>
       </div>
@@ -66,6 +66,9 @@ export function EbookUno() {
     </Section>
   );
 }
+    </Section>
+  );
+}
 
 export function EbookDos() {
   return (
@@ -82,11 +85,6 @@ export function EbookDos() {
       </Reveal>
 
       <div className="mx-auto mt-10 max-w-2xl text-center">
-        <Reveal delay={100}>
-          <h3 className="font-serif text-2xl uppercase tracking-[0.05em] md:text-3xl">
-            Por qué saber de dinero no te hizo ganar más
-          </h3>
-        </Reveal>
         <Reveal delay={160}>
           <p className="body-lg mx-auto mt-6 max-w-[46ch]">
             Una Mente Vale Más que un Millón no es falta de información. Es la forma en que
