@@ -5,27 +5,27 @@ import costoImage from "@/assets/costo.webp";
 const situaciones = [
   {
     n: "01",
-    emoji: "⚡️",
-    t: "Respondiste demasiado rápido.",
-    d: "Después deseaste haber esperado.",
+    emoji: "🔥",
+    t: "Respondes en caliente y luego piensas:",
+    d: "\"Debí haberme quedado callado.\"",
   },
   {
     n: "02",
     emoji: "😰",
-    t: "Tomaste una decisión bajo presión.",
-    d: "Después viste lo que no habías visto antes.",
+    t: "Tomas una decisión bajo presión y después:",
+    d: "\"¿Por qué hice eso?\"",
   },
   {
     n: "03",
-    emoji: "💔",
-    t: "Dejaste que la emoción eligiera por ti.",
-    d: "Y luego tuviste que lidiar con las consecuencias.",
+    emoji: "💸",
+    t: "Trabajas y te esfuerzas.",
+    d: "Y sigues sintiendo que económicamente no avanzas.",
   },
   {
     n: "04",
-    emoji: "😮‍💨",
-    t: "Sabías que debías mantener la calma.",
-    d: "Pero en ese momento parecía imposible.",
+    emoji: "🌀",
+    t: "Sabes que podrías estar haciendo más con tu vida.",
+    d: "Pero no encuentras claridad para decidir por dónde empezar.",
   },
 ];
 
@@ -36,9 +36,9 @@ export function Identificacion() {
         <Eyebrow>Identificación</Eyebrow>
       </Reveal>
       <Reveal delay={100}>
-        <h2 className="display-lg mt-8 lg:max-w-[20ch]">
-          ¿Cuántas veces has actuado en caliente…{" "}
-          <span className="italic normal-case text-accent">y lo has pensado en frío?</span>
+        <h2 className="display-lg mt-8 lg:max-w-[22ch]">
+          ¿Te ha pasado que sabes qué deberías hacer…{" "}
+          <span className="italic normal-case text-accent">pero en el momento actúas diferente?</span>
         </h2>
       </Reveal>
 
@@ -61,10 +61,9 @@ export function Identificacion() {
 
       <Reveal delay={120}>
         <div className="mx-auto mt-14 max-w-[46ch] border-l border-accent pl-8 text-left md:mt-20 lg:mx-0">
-          <p className="eyebrow mb-4">Y entonces</p>
           <blockquote className="text-2xl leading-snug md:text-3xl">
-            No siempre necesitas saber más. A veces necesitas aprender a crear un espacio entre lo
-            que ocurre y lo que haces después.
+            No necesariamente te falta capacidad. A veces te falta algo más básico: aprender a
+            pensar antes de reaccionar.
           </blockquote>
         </div>
       </Reveal>
@@ -124,7 +123,7 @@ const etapas = [
   {
     n: "01",
     t: "Calma",
-    d: "Aprender a crear espacio entre lo que sucede y tu reacción.",
+    d: "Aprende a crear un espacio entre lo que sucede y tu reacción.",
     icon: (
       <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.3">
         <circle cx="16" cy="16" r="3.5" />
@@ -136,7 +135,7 @@ const etapas = [
   {
     n: "02",
     t: "Claridad",
-    d: "Pensar antes de responder, elegir y actuar.",
+    d: "Aprende a pensar con más perspectiva antes de tomar una decisión.",
     icon: (
       <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.3">
         <circle cx="16" cy="17" r="6.5" />
@@ -147,7 +146,7 @@ const etapas = [
   {
     n: "03",
     t: "Dirección",
-    d: "Utilizar esa claridad para tomar mejores decisiones sobre tu vida y tu futuro.",
+    d: "Usa esa claridad para actuar mejor en tus relaciones, tu trabajo y tus finanzas.",
     icon: (
       <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.3">
         <circle cx="16" cy="16" r="13" />
@@ -194,6 +193,14 @@ export function Mecanismo() {
           </Reveal>
         ))}
       </div>
+
+      <Reveal delay={360}>
+        <p className="mx-auto mt-16 max-w-[34ch] text-center font-serif text-xl italic leading-snug md:mt-20 md:text-2xl">
+          Porque una mente alterada busca alivio.
+          <br />
+          Una mente clara busca soluciones.
+        </p>
+      </Reveal>
     </Section>
   );
 }
