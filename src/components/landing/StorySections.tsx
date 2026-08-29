@@ -1,70 +1,26 @@
 import { Eyebrow, MediaFrame, Reveal, Section } from "./primitives";
+import identificacionImage from "@/assets/identificacion.webp";
 import claridadImage from "@/assets/claridad.webp";
 import costoImage from "@/assets/costo.webp";
 
-const situaciones = [
-  {
-    n: "01",
-    emoji: "🔥",
-    t: "Respondes en caliente y luego piensas:",
-    d: "\"Debí haberme quedado callado.\"",
-  },
-  {
-    n: "02",
-    emoji: "😰",
-    t: "Tomas una decisión bajo presión y después:",
-    d: "\"¿Por qué hice eso?\"",
-  },
-  {
-    n: "03",
-    emoji: "💸",
-    t: "Trabajas y te esfuerzas.",
-    d: "Y sigues sintiendo que económicamente no avanzas.",
-  },
-  {
-    n: "04",
-    emoji: "🌀",
-    t: "Sabes que podrías estar haciendo más con tu vida.",
-    d: "Pero no encuentras claridad para decidir por dónde empezar.",
-  },
-];
-
 export function Identificacion() {
   return (
-    <Section>
+    <Section className="px-0 py-0 md:px-10 md:py-24">
       <Reveal>
-        <Eyebrow>Identificación</Eyebrow>
-      </Reveal>
-      <Reveal delay={100}>
-        <h2 className="display-lg mt-8 lg:max-w-[22ch]">
-          ¿Te ha pasado que sabes qué deberías hacer…{" "}
-          <span className="italic normal-case text-accent">pero en el momento actúas diferente?</span>
-        </h2>
-      </Reveal>
-
-      <div className="mt-12 divide-y divide-line border-t border-line md:mt-20">
-        {situaciones.map((s, i) => (
-          <Reveal key={s.n} delay={i * 90}>
-            <article className="flex flex-col items-center gap-2 py-9 text-center lg:items-start lg:text-left">
-              <span className="flex items-center gap-2 font-serif text-sm text-accent">
-                <span aria-hidden>{s.emoji}</span>
-                {s.n}
-              </span>
-              <p className="max-w-[46ch] text-lg leading-snug md:text-xl">{s.t}</p>
-              <p className="max-w-[46ch] text-sm text-muted-foreground italic leading-relaxed md:text-base">
-                {s.d}
-              </p>
-            </article>
-          </Reveal>
-        ))}
-      </div>
-
-      <Reveal delay={120}>
-        <div className="mx-auto mt-14 max-w-[46ch] border-l border-accent pl-8 text-left md:mt-20 lg:mx-0">
-          <blockquote className="text-2xl leading-snug md:text-3xl">
-            No necesariamente te falta capacidad. A veces te falta algo más básico: aprender a
-            pensar antes de reaccionar.
-          </blockquote>
+        <div className="relative mx-auto w-full md:max-w-[480px]">
+          <span
+            aria-hidden
+            className="absolute -top-6 -left-6 hidden h-20 w-20 border-t border-l border-gold-soft md:block"
+          />
+          <span
+            aria-hidden
+            className="absolute -right-6 -bottom-6 hidden h-20 w-20 border-r border-b border-gold-soft md:block"
+          />
+          <img
+            src={identificacionImage}
+            alt="¿Te ha pasado que sabes qué deberías hacer... pero en el momento actúas diferente? Respondes en caliente y luego piensas: debí haberme quedado callado. Tomas una decisión bajo presión y después: ¿por qué hice eso? Trabajas y te esfuerzas, y sigues sintiendo que económicamente no avanzas. Sabes que podrías estar haciendo más con tu vida, pero no encuentras claridad para decidir por dónde empezar. No necesariamente te falta capacidad. A veces te falta algo más básico: aprender a pensar antes de reaccionar."
+            className="block h-auto w-full md:shadow-[0_30px_70px_rgba(0,0,0,0.2)]"
+          />
         </div>
       </Reveal>
     </Section>
