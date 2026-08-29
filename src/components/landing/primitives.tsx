@@ -128,9 +128,9 @@ export function Cta({
         }
       }}
       className={cn(
-        "group inline-flex w-full items-center justify-center gap-3 rounded-full px-9 py-4 font-serif text-base font-semibold tracking-normal transition-all duration-300 sm:w-auto",
+        "group -mx-6 inline-flex w-[calc(100%+3rem)] items-center justify-center gap-3 rounded-full px-9 py-4 font-serif text-base font-semibold tracking-normal transition-all duration-300 sm:mx-0 sm:w-auto",
         variant === "solid"
-          ? "cta-glow bg-accent text-accent-foreground shadow-[0_12px_28px_rgba(0,0,0,0.22)] hover:-translate-y-0.5 hover:shadow-[0_16px_34px_rgba(0,0,0,0.28)] hover:brightness-110"
+          ? "cta-glow bg-[var(--cta-yellow)] text-ink shadow-[0_12px_28px_rgba(0,0,0,0.22)] hover:-translate-y-0.5 hover:shadow-[0_16px_34px_rgba(0,0,0,0.28)] hover:brightness-105"
           : "border border-current text-foreground hover:border-accent hover:text-accent",
         className,
       )}
