@@ -23,9 +23,6 @@ export function EbookUno() {
     <Section id="ebook-01">
       <div className="mx-auto max-w-2xl text-center">
         <Reveal>
-          <Eyebrow>Los dos libros</Eyebrow>
-        </Reveal>
-        <Reveal delay={100}>
           <h2 className="display-md mt-8 uppercase">
             No son dos libros separados. Son dos partes del mismo proceso.
           </h2>
