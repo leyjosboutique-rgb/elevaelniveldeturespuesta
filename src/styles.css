@@ -74,8 +74,8 @@
   /* Editorial palette: marfil, ink, verde botella accent */
   --ivory: oklch(0.970 0.007 88.6);
   --ink: oklch(0.196 0 0);
-  --gold: oklch(0.739 0.089 78.8);
-  --gold-soft: oklch(0.739 0.089 78.8 / 35%);
+  --gold: oklch(0.697 0.128 80.8);
+  --gold-soft: oklch(0.697 0.128 80.8 / 35%);
   --line: oklch(0.196 0 0 / 12%);
 
   --background: var(--ivory);
@@ -112,14 +112,14 @@
   --sidebar-ring: var(--gold);
 }
 
-/* Dark editorial sections (wine-black) — applied per-section via .section-dark */
+/* Dark editorial sections (warm brown-black, matches the generated images) — applied per-section via .section-dark */
 .section-dark {
-  --background: oklch(0.198 0.024 10.1);
+  --background: oklch(0.199 0.019 62.6);
   --foreground: oklch(0.955 0.017 89);
-  --muted-foreground: oklch(0.72 0.02 20);
+  --muted-foreground: oklch(0.72 0.02 60);
   --border: oklch(0.955 0.017 89 / 15%);
   --line: oklch(0.955 0.017 89 / 15%);
-  --card: oklch(0.245 0.024 10.1);
+  --card: oklch(0.249 0.026 66.2);
   --card-foreground: oklch(0.955 0.017 89);
   --primary: oklch(0.955 0.017 89);
   --primary-foreground: oklch(0.196 0 0);
