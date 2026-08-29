@@ -125,16 +125,40 @@ const etapas = [
     n: "01",
     t: "Calma",
     d: "Aprender a crear espacio entre lo que sucede y tu reacción.",
+    icon: (
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.3">
+        <circle cx="16" cy="16" r="3.5" />
+        <circle cx="16" cy="16" r="8.5" opacity="0.55" />
+        <circle cx="16" cy="16" r="13.5" opacity="0.3" />
+      </svg>
+    ),
   },
   {
     n: "02",
     t: "Claridad",
     d: "Pensar antes de responder, elegir y actuar.",
+    icon: (
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.3">
+        <circle cx="16" cy="17" r="6.5" />
+        <path d="M16 2.5v3.5M28 15.5h-3.5M4 15.5H7.5M24.5 5.5l-2.5 2.5M9.5 22.5 7 25M22.5 25l-2.5-2.5M9.5 8 7 5.5" strokeLinecap="round" />
+      </svg>
+    ),
   },
   {
     n: "03",
     t: "Dirección",
     d: "Utilizar esa claridad para tomar mejores decisiones sobre tu vida y tu futuro.",
+    icon: (
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.3">
+        <circle cx="16" cy="16" r="13" />
+        <path
+          d="M21 11l-4.5 2.5L14 18l4.5-2.5L21 11z"
+          strokeLinejoin="round"
+          fill="currentColor"
+          fillOpacity="0.18"
+        />
+      </svg>
+    ),
   },
 ];
 
@@ -150,13 +174,20 @@ export function Mecanismo() {
         </h2>
       </Reveal>
 
-      <div className="mt-12 grid gap-px border-t border-line md:mt-20 md:grid-cols-3 md:border-t-0">
+      <div className="relative mt-16 grid gap-14 md:mt-24 lg:grid-cols-3 lg:gap-12">
+        <span
+          aria-hidden
+          className="absolute top-6 left-[18%] right-[18%] hidden h-px bg-gold-soft lg:block"
+        />
         {etapas.map((e, i) => (
           <Reveal key={e.n} delay={i * 120}>
-            <article className="flex h-full flex-col items-center border-line px-0 py-10 text-center md:border-l md:px-10 md:py-2 md:first:border-l-0 md:first:pl-0 lg:items-start lg:text-left">
-              <span className="font-serif text-sm text-accent">{e.n}</span>
-              <h3 className="mt-6 text-2xl tracking-[0.18em] uppercase">{e.t}</h3>
-              <p className="mx-auto mt-5 max-w-[34ch] text-sm leading-relaxed text-muted-foreground lg:mx-0">
+            <article className="flex flex-col items-center text-center lg:items-start lg:text-left">
+              <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full border border-accent bg-secondary text-accent">
+                <span className="h-6 w-6">{e.icon}</span>
+              </div>
+              <span className="mt-4 font-serif text-xs tracking-[0.2em] text-accent">{e.n}</span>
+              <h3 className="mt-2 text-2xl tracking-[0.18em] uppercase">{e.t}</h3>
+              <p className="mx-auto mt-4 max-w-[34ch] text-sm leading-relaxed text-muted-foreground lg:mx-0">
                 {e.d}
               </p>
             </article>
