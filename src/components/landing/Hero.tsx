@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { cn } from "@/lib/utils";
 import { Cta, MediaFrame, Reveal } from "./primitives";
 import heroMockup from "@/assets/hero.webp";
 
@@ -9,7 +8,6 @@ function pad(n: number) {
 
 function TopBar() {
   const [left, setLeft] = useState(15 * 60);
-  const urgent = left <= 60;
 
   useEffect(() => {
     const id = setInterval(() => setLeft((s) => (s > 0 ? s - 1 : 0)), 1000);
@@ -18,15 +16,12 @@ function TopBar() {
 
   return (
     <div
-      className={cn(
-        "sticky top-0 z-50 px-4 py-2.5 text-center text-[0.68rem] font-semibold tracking-[0.16em] uppercase transition-colors duration-500",
-        urgent ? "bg-destructive text-destructive-foreground" : "bg-accent text-accent-foreground",
-      )}
+      className="sticky top-0 z-50 bg-accent px-4 py-2.5 text-center text-[0.68rem] font-semibold tracking-[0.16em] text-accent-foreground uppercase"
       role="status"
       aria-live="polite"
     >
-      <span aria-hidden>✦</span> El precio de hoy termina en{" "}
-      <span className={cn("topbar-timer tabular-nums", urgent && "is-urgent")}>
+      <span aria-hidden>✦</span> Precio especial disponible por{" "}
+      <span className="topbar-timer tabular-nums">
         {pad(Math.floor(left / 60))}:{pad(left % 60)}
       </span>
     </div>
