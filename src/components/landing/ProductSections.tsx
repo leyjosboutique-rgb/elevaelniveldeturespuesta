@@ -2,6 +2,7 @@ import { Cta, Eyebrow, MediaFrame, Reveal, Section } from "./primitives";
 import ebookUnoMockup from "@/assets/libro40dias.webp";
 import ebookDosMockup from "@/assets/libromente.webp";
 import conexionImage from "@/assets/conexion.webp";
+import transformacionImage from "@/assets/transformacion.webp";
 
 function BenefitList({ items }: { items: string[] }) {
   return (
@@ -132,59 +133,26 @@ export function Conexion() {
   );
 }
 
-const antes = [
-  "Reaccionas",
-  "Te apresuras",
-  "Te dejas llevar",
-  "Decides bajo presión",
-  "Buscas aprobación",
-  "Actúas desde el miedo",
-];
-const despues = [
-  "Respondes",
-  "Observas",
-  "Piensas",
-  "Eliges",
-  "Confías más en tu criterio",
-  "Actúas con dirección",
-];
-
 export function Transformacion() {
   return (
     <Section>
       <Reveal>
-        <Eyebrow>La transformación</Eyebrow>
+        <div className="relative mx-auto w-full max-w-[440px]">
+          <span
+            aria-hidden
+            className="absolute -top-6 -left-6 hidden h-20 w-20 border-t border-l border-gold-soft md:block"
+          />
+          <span
+            aria-hidden
+            className="absolute -right-6 -bottom-6 hidden h-20 w-20 border-r border-b border-gold-soft md:block"
+          />
+          <img
+            src={transformacionImage}
+            alt="La transformación. No se trata de convertirte en otra persona. Se trata de dejar de actuar automáticamente. Antes: reaccionas, te apresuras, te dejas llevar, decides bajo presión, buscas aprobación, actúas desde el miedo. Después: respondes, observas, piensas, eliges, confías más en tu criterio, actúas con dirección."
+            className="h-auto w-full shadow-[0_30px_70px_rgba(0,0,0,0.2)]"
+          />
+        </div>
       </Reveal>
-      <Reveal delay={100}>
-        <h2 className="display-lg mt-8 lg:max-w-[16ch]">No se trata de convertirte en otra persona.</h2>
-      </Reveal>
-      <Reveal delay={160}>
-        <p className="body-lg mx-auto mt-6 max-w-[42ch] italic lg:mx-0">
-          Se trata de dejar de actuar automáticamente.
-        </p>
-      </Reveal>
-
-      <div className="mt-12 grid grid-cols-2 gap-x-5 md:mt-20 md:gap-x-20">
-        <Reveal>
-          <p className="eyebrow border-b border-line pb-4 text-muted-foreground">Antes</p>
-        </Reveal>
-        <Reveal delay={100}>
-          <p className="eyebrow border-b border-accent pb-4">Después</p>
-        </Reveal>
-
-        {antes.map((a, i) => (
-          <Reveal key={a} delay={i * 70} className="contents">
-            <div className="contents">
-              <p className="border-b border-line py-5 text-base text-muted-foreground line-through decoration-gold-soft md:text-lg">
-                {a}
-              </p>
-              <p className="border-b border-line py-5 font-serif text-xl md:text-2xl">
-                {despues[i]}
-              </p>
-            </div>
-          </Reveal>
-        ))}
-      </div>
     </Section>
   );
 }
