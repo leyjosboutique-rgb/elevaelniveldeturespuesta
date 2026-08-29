@@ -6,9 +6,9 @@ import transformacionImage from "@/assets/transformacion.webp";
 
 function BenefitList({ items }: { items: string[] }) {
   return (
-    <ul className="mx-auto mt-10 max-w-[46ch] divide-y divide-line border-y border-line lg:mx-0 lg:max-w-none">
+    <ul className="mx-auto mt-10 max-w-[46ch] divide-y divide-line border-y border-line">
       {items.map((b) => (
-        <li key={b} className="flex items-baseline justify-center gap-4 py-4 lg:justify-start">
+        <li key={b} className="flex items-baseline justify-center gap-4 py-4">
           <span aria-hidden className="h-px w-5 shrink-0 translate-y-[-0.3em] bg-accent" />
           <span className="text-sm tracking-wide md:text-base">{b}</span>
         </li>
@@ -20,43 +20,52 @@ function BenefitList({ items }: { items: string[] }) {
 export function EbookUno() {
   return (
     <Section id="ebook-01">
-      <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-24">
+      <div className="mx-auto max-w-2xl text-center">
         <Reveal>
+          <Eyebrow>Los dos libros</Eyebrow>
+        </Reveal>
+        <Reveal delay={100}>
+          <h2 className="display-md mt-8 uppercase">
+            40 días para dejar de explotar y empezar a elegir
+          </h2>
+        </Reveal>
+      </div>
+
+      <Reveal delay={160}>
+        <div className="mx-auto mt-12 w-full max-w-[360px]">
           <MediaFrame
             src={ebookUnoMockup}
             alt="Portada de 40 días de viaje en silencio"
             label="Mockup ebook 01"
             ratio="4 / 5"
           />
-        </Reveal>
-        <div>
-          <Reveal>
-            <Eyebrow>Ebook 01</Eyebrow>
-          </Reveal>
-          <Reveal delay={100}>
-            <h2 className="display-md mt-8 uppercase">40 días de viaje en silencio</h2>
-          </Reveal>
-          <Reveal delay={160}>
-            <p className="body-lg mx-auto mt-6 max-w-[46ch] lg:mx-0">
-              Un recorrido práctico para trabajar tu mente, tus emociones y la forma en que
-              respondes ante lo que ocurre a tu alrededor.
-            </p>
-          </Reveal>
-          <Reveal delay={220}>
-            <BenefitList
-              items={[
-                "Un capítulo, una tarea y una oración al día, durante 40 días",
-                "Cómo calmarte antes de responder, para no decir lo que luego lamentas",
-                "Cómo poner un límite sin pelear y sin pedir perdón después",
-                "Qué hacer con la culpa cuando decides priorizarte",
-                "El poder del silencio: cuándo no contestar es la mejor respuesta",
-                "Cómo sostenerte los días en que quieres tirar la toalla",
-                "Inspirado en los 40 días bíblicos: prueba, transformación y crecimiento",
-              ]}
-            />
-          </Reveal>
         </div>
+      </Reveal>
+
+      <div className="mx-auto mt-10 max-w-2xl text-center">
+        <Reveal delay={200}>
+          <p className="body-lg mx-auto max-w-[46ch]">
+            40 Días de Viaje en Silencio no es un diario más. Es la diferencia entre explotar y
+            elegir callarte a tiempo.
+          </p>
+        </Reveal>
+        <Reveal delay={240}>
+          <BenefitList
+            items={[
+              "La estructura que evita que abandones esto en la semana 2: un capítulo, una tarea, una oración",
+              "Cómo calmarte antes de responder — para dejar de decir lo que después te toca disculpar",
+              "Cómo poner un límite sin pelear, y sin pagarlo con una disculpa después",
+              "Qué hacer con la culpa exacta que aparece la primera vez que te priorizas de verdad",
+              "El poder del silencio: el momento en que no contestar dice más que cualquier respuesta",
+              "Qué hacer los días en que todo tu cuerpo te pide tirar la toalla — porque van a aparecer",
+              "Inspirado en los 40 días bíblicos: la misma lógica de prueba, transformación y crecimiento",
+            ]}
+          />
+        </Reveal>
       </div>
+    </Section>
+  );
+}
     </Section>
   );
 }
@@ -64,40 +73,40 @@ export function EbookUno() {
 export function EbookDos() {
   return (
     <Section id="ebook-02" className="border-y border-line bg-secondary">
-      <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-24">
-        <div className="order-2 lg:order-1">
-          <Reveal>
-            <Eyebrow>Ebook 02</Eyebrow>
-          </Reveal>
-          <Reveal delay={100}>
-            <h2 className="display-md mt-8 uppercase">Una mente vale más que un millón</h2>
-          </Reveal>
-          <Reveal delay={160}>
-            <p className="body-lg mx-auto mt-6 max-w-[46ch] lg:mx-0">
-              Una guía para cambiar tu manera de pensar sobre el dinero, las oportunidades y las
-              decisiones que construyen tu futuro.
-            </p>
-          </Reveal>
-          <Reveal delay={220}>
-            <BenefitList
-              items={[
-                "Las historias y la forma de pensar de decenas de personas que empezaron de cero",
-                "Cómo ver una oportunidad donde los demás solo ven un problema",
-                "Por qué te pagan por resolver, no por echar horas",
-                "Cómo ponerle precio a lo que ya sabes hacer, sin sentir culpa",
-                "Por qué la gente compra deseo y no producto",
-                "Cómo dejar de esperar permiso para empezar algo tuyo",
-                "Las reglas del dinero que nadie te explicó en casa",
-              ]}
-            />
-          </Reveal>
-        </div>
-        <Reveal delay={120} className="order-1 lg:order-2">
+      <Reveal>
+        <div className="mx-auto w-full max-w-[360px]">
           <MediaFrame
             src={ebookDosMockup}
             alt="Portada de Una mente vale más que un millón"
             label="Mockup ebook 02"
             ratio="4 / 5"
+          />
+        </div>
+      </Reveal>
+
+      <div className="mx-auto mt-10 max-w-2xl text-center">
+        <Reveal delay={100}>
+          <h3 className="font-serif text-2xl uppercase tracking-[0.05em] md:text-3xl">
+            Por qué saber de dinero no te hizo ganar más
+          </h3>
+        </Reveal>
+        <Reveal delay={160}>
+          <p className="body-lg mx-auto mt-6 max-w-[46ch]">
+            Una Mente Vale Más que un Millón no es falta de información. Es la forma en que
+            piensas sobre lo que ya sabes.
+          </p>
+        </Reveal>
+        <Reveal delay={220}>
+          <BenefitList
+            items={[
+              "Cómo piensan realmente las personas que empezaron de cero — no la versión bonita que cuentan después",
+              "El mismo problema que ya viste. Pero mirado desde el ángulo donde aparece la oportunidad",
+              "Por qué te pagan por resolver un problema, no por las horas que le metiste",
+              "Cómo ponerle precio a lo que ya sabes hacer sin la culpa que te frena a último momento",
+              "Por qué nadie compra tu producto. Compra lo que ese producto promete resolverle",
+              "El permiso que llevas años esperando que nunca te va a dar nadie más que vos",
+              "Las reglas del dinero que en tu casa nunca se sentaron a explicarte",
+            ]}
           />
         </Reveal>
       </div>
