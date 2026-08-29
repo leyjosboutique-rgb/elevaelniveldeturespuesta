@@ -74,8 +74,8 @@
   /* Editorial palette: marfil, ink, verde botella accent */
   --ivory: oklch(0.970 0.007 88.6);
   --ink: oklch(0.196 0 0);
-  --gold: oklch(0.643 0.159 154);
-  --gold-soft: oklch(0.643 0.159 154 / 35%);
+  --gold: oklch(0.739 0.089 78.8);
+  --gold-soft: oklch(0.739 0.089 78.8 / 35%);
   --line: oklch(0.196 0 0 / 12%);
 
   --background: var(--ivory);
@@ -91,7 +91,7 @@
   --muted: oklch(0.925 0.017 89);
   --muted-foreground: oklch(0.45 0.01 80);
   --accent: var(--gold);
-  --accent-foreground: var(--ivory);
+  --accent-foreground: var(--ink);
   --destructive: oklch(0.505 0.13 27);
   --destructive-foreground: var(--ivory);
   --border: oklch(0.196 0 0 / 12%);
