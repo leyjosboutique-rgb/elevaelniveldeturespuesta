@@ -3,6 +3,7 @@ import ebookUnoMockup from "@/assets/libro40dias.webp";
 import ebookDosMockup from "@/assets/libromente.webp";
 import conexionImage from "@/assets/conexion.webp";
 import transformacionImage from "@/assets/transformacion.webp";
+import aplicacionImage from "@/assets/aplicacion.webp";
 
 function BenefitList({ items }: { items: string[] }) {
   return (
@@ -162,50 +163,26 @@ export function Transformacion() {
   );
 }
 
-const aplicaciones = [
-  {
-    t: "Cuando alguien te provoca",
-    d: "En lugar de responder inmediatamente, aprendes a hacer una pausa.",
-  },
-  {
-    t: "Cuando tienes que tomar una decisión importante",
-    d: "En lugar de decidir desde la presión, aprendes a observar el panorama completo.",
-  },
-  {
-    t: "Cuando aparece una oportunidad",
-    d: "En lugar de verla únicamente como riesgo, aprendes a analizarla.",
-  },
-  {
-    t: "Cuando el dinero se vuelve un problema",
-    d: "En lugar de actuar solamente desde la preocupación, empiezas a pensar en opciones.",
-  },
-];
-
 export function Aplicacion() {
   return (
-    <Section className="border-y border-line bg-secondary">
+    <Section className="px-0 py-0 md:px-10 md:py-24">
       <Reveal>
-        <Eyebrow>Aplicación en la vida real</Eyebrow>
+        <div className="relative mx-auto w-full md:max-w-[440px]">
+          <span
+            aria-hidden
+            className="absolute -top-6 -left-6 hidden h-20 w-20 border-t border-l border-gold-soft md:block"
+          />
+          <span
+            aria-hidden
+            className="absolute -right-6 -bottom-6 hidden h-20 w-20 border-r border-b border-gold-soft md:block"
+          />
+          <img
+            src={aplicacionImage}
+            alt="¿Qué empiezas a hacer diferente? 01 Cuando alguien te provoca: en lugar de responder inmediatamente, aprendes a hacer una pausa. 02 Cuando tienes que tomar una decisión importante: en lugar de decidir desde la presión, aprendes a observar el panorama completo. 03 Cuando aparece una oportunidad: en lugar de verla únicamente como riesgo, aprendes a analizarla. 04 Cuando el dinero se vuelve un problema: en lugar de actuar solamente desde la preocupación, empiezas a pensar en opciones. No se trata de tener todo resuelto. Se trata de elegirte, incluso cuando es difícil."
+            className="block h-auto w-full md:shadow-[0_30px_70px_rgba(0,0,0,0.2)]"
+          />
+        </div>
       </Reveal>
-      <Reveal delay={100}>
-        <h2 className="display-lg mt-8 lg:max-w-[18ch]">¿Qué empiezas a hacer diferente?</h2>
-      </Reveal>
-
-      <div className="mt-12 grid gap-px md:mt-20 md:grid-cols-2">
-        {aplicaciones.map((a, i) => (
-          <Reveal key={a.t} delay={i * 90}>
-            <article className="flex h-full flex-col items-center border-t border-line py-9 text-center md:pr-10 lg:items-start lg:text-left">
-              <span className="font-serif text-sm text-accent">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <h3 className="mt-5 text-xl tracking-[0.16em] uppercase">{a.t}</h3>
-              <p className="mx-auto mt-4 max-w-[38ch] text-sm leading-relaxed text-muted-foreground lg:mx-0">
-                {a.d}
-              </p>
-            </article>
-          </Reveal>
-        ))}
-      </div>
     </Section>
   );
 }
