@@ -2,6 +2,7 @@ import { Eyebrow, MediaFrame, Reveal, Section } from "./primitives";
 import identificacionImage from "@/assets/identificacion.webp";
 import claridadImage from "@/assets/claridad.webp";
 import costoImage from "@/assets/costo.webp";
+import mecanismoImage from "@/assets/mecanismo.webp";
 
 export function Identificacion() {
   return (
@@ -75,87 +76,25 @@ export function Revelacion() {
   );
 }
 
-const etapas = [
-  {
-    n: "01",
-    t: "Calma",
-    d: "Aprende a crear un espacio entre lo que sucede y tu reacción.",
-    icon: (
-      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.3">
-        <circle cx="16" cy="16" r="3.5" />
-        <circle cx="16" cy="16" r="8.5" opacity="0.55" />
-        <circle cx="16" cy="16" r="13.5" opacity="0.3" />
-      </svg>
-    ),
-  },
-  {
-    n: "02",
-    t: "Claridad",
-    d: "Aprende a pensar con más perspectiva antes de tomar una decisión.",
-    icon: (
-      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.3">
-        <circle cx="16" cy="17" r="6.5" />
-        <path d="M16 2.5v3.5M28 15.5h-3.5M4 15.5H7.5M24.5 5.5l-2.5 2.5M9.5 22.5 7 25M22.5 25l-2.5-2.5M9.5 8 7 5.5" strokeLinecap="round" />
-      </svg>
-    ),
-  },
-  {
-    n: "03",
-    t: "Dirección",
-    d: "Usa esa claridad para actuar mejor en tus relaciones, tu trabajo y tus finanzas.",
-    icon: (
-      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.3">
-        <circle cx="16" cy="16" r="13" />
-        <path
-          d="M21 11l-4.5 2.5L14 18l4.5-2.5L21 11z"
-          strokeLinejoin="round"
-          fill="currentColor"
-          fillOpacity="0.18"
-        />
-      </svg>
-    ),
-  },
-];
-
 export function Mecanismo() {
   return (
-    <Section className="border-y border-line bg-secondary">
+    <Section dark className="px-0 py-0 md:px-10 md:py-24">
       <Reveal>
-        <Eyebrow>El mecanismo</Eyebrow>
-      </Reveal>
-      <Reveal delay={100}>
-        <h2 className="display-lg mt-8 lg:max-w-[14ch]">
-          Primero calma. Después claridad. Finalmente dirección.
-        </h2>
-      </Reveal>
-
-      <div className="relative mt-16 grid gap-14 md:mt-24 lg:grid-cols-3 lg:gap-12">
-        <span
-          aria-hidden
-          className="absolute top-6 left-[18%] right-[18%] hidden h-px bg-gold-soft lg:block"
-        />
-        {etapas.map((e, i) => (
-          <Reveal key={e.n} delay={i * 120}>
-            <article className="flex flex-col items-center text-center lg:items-start lg:text-left">
-              <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full border border-accent bg-secondary text-accent">
-                <span className="h-6 w-6">{e.icon}</span>
-              </div>
-              <span className="mt-4 font-serif text-xs tracking-[0.2em] text-accent">{e.n}</span>
-              <h3 className="mt-2 text-2xl tracking-[0.18em] uppercase">{e.t}</h3>
-              <p className="mx-auto mt-4 max-w-[34ch] text-sm leading-relaxed text-muted-foreground lg:mx-0">
-                {e.d}
-              </p>
-            </article>
-          </Reveal>
-        ))}
-      </div>
-
-      <Reveal delay={360}>
-        <p className="mx-auto mt-16 max-w-[34ch] text-center font-serif text-xl italic leading-snug md:mt-20 md:text-2xl">
-          Porque una mente alterada busca alivio.
-          <br />
-          Una mente clara busca soluciones.
-        </p>
+        <div className="relative mx-auto w-full md:max-w-[480px]">
+          <span
+            aria-hidden
+            className="absolute -top-6 -left-6 hidden h-20 w-20 border-t border-l border-gold-soft md:block"
+          />
+          <span
+            aria-hidden
+            className="absolute -right-6 -bottom-6 hidden h-20 w-20 border-r border-b border-gold-soft md:block"
+          />
+          <img
+            src={mecanismoImage}
+            alt="El mecanismo. Primero calma, después claridad, finalmente dirección. 01 Calma: aprende a crear un espacio entre lo que sucede y tu reacción. 02 Claridad: aprende a pensar con más perspectiva antes de tomar una decisión. 03 Dirección: usa esa claridad para actuar mejor en tus relaciones, tu trabajo y tus finanzas. Porque una mente alterada busca alivio. Una mente clara busca soluciones."
+            className="block h-auto w-full md:shadow-[0_30px_70px_rgba(0,0,0,0.3)]"
+          />
+        </div>
       </Reveal>
     </Section>
   );
