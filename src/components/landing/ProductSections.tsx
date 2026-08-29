@@ -45,11 +45,13 @@ export function EbookUno() {
           <Reveal delay={220}>
             <BenefitList
               items={[
-                "40 ejercicios prácticos",
-                "Reflexión diaria",
-                "Control de reacciones",
-                "Mayor claridad mental",
-                "Comunicación más consciente",
+                "Un capítulo, una tarea y una oración al día, durante 40 días",
+                "Cómo calmarte antes de responder, para no decir lo que luego lamentas",
+                "Cómo poner un límite sin pelear y sin pedir perdón después",
+                "Qué hacer con la culpa cuando decides priorizarte",
+                "El poder del silencio: cuándo no contestar es la mejor respuesta",
+                "Cómo sostenerte los días en que quieres tirar la toalla",
+                "Inspirado en los 40 días bíblicos: prueba, transformación y crecimiento",
               ]}
             />
           </Reveal>
@@ -79,11 +81,13 @@ export function EbookDos() {
           <Reveal delay={220}>
             <BenefitList
               items={[
-                "Pensamiento financiero",
-                "Toma de decisiones",
-                "Nuevas perspectivas sobre el dinero",
-                "Identificación de oportunidades",
-                "Construcción de una dirección propia",
+                "Las historias y la forma de pensar de decenas de personas que empezaron de cero",
+                "Cómo ver una oportunidad donde los demás solo ven un problema",
+                "Por qué te pagan por resolver, no por echar horas",
+                "Cómo ponerle precio a lo que ya sabes hacer, sin sentir culpa",
+                "Por qué la gente compra deseo y no producto",
+                "Cómo dejar de esperar permiso para empezar algo tuyo",
+                "Las reglas del dinero que nadie te explicó en casa",
               ]}
             />
           </Reveal>
