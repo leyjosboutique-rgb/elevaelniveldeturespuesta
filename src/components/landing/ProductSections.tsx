@@ -158,13 +158,21 @@ export function Transformacion() {
 }
 
 const aplicaciones = [
-  { t: "Relaciones", d: "Menos discusiones impulsivas. Más conversaciones conscientes." },
-  { t: "Trabajo", d: "Más seguridad para responder ante presión y conflicto." },
-  { t: "Dinero", d: "Menos decisiones impulsivas. Más pensamiento estratégico." },
-  { t: "Vida personal", d: "Más capacidad para detenerte, observar y elegir." },
   {
-    t: "Futuro",
-    d: "Dejar de vivir reaccionando a lo que sucede y empezar a construir lo que quieres.",
+    t: "Cuando alguien te provoca",
+    d: "En lugar de responder inmediatamente, aprendes a hacer una pausa.",
+  },
+  {
+    t: "Cuando tienes que tomar una decisión importante",
+    d: "En lugar de decidir desde la presión, aprendes a observar el panorama completo.",
+  },
+  {
+    t: "Cuando aparece una oportunidad",
+    d: "En lugar de verla únicamente como riesgo, aprendes a analizarla.",
+  },
+  {
+    t: "Cuando el dinero se vuelve un problema",
+    d: "En lugar de actuar solamente desde la preocupación, empiezas a pensar en opciones.",
   },
 ];
 
@@ -175,10 +183,10 @@ export function Aplicacion() {
         <Eyebrow>Aplicación en la vida real</Eyebrow>
       </Reveal>
       <Reveal delay={100}>
-        <h2 className="display-lg mt-8 lg:max-w-[16ch]">¿Dónde empieza a cambiar esto?</h2>
+        <h2 className="display-lg mt-8 lg:max-w-[18ch]">¿Qué empiezas a hacer diferente?</h2>
       </Reveal>
 
-      <div className="mt-12 grid gap-px md:mt-20 md:grid-cols-3">
+      <div className="mt-12 grid gap-px md:mt-20 md:grid-cols-2">
         {aplicaciones.map((a, i) => (
           <Reveal key={a.t} delay={i * 90}>
             <article className="flex h-full flex-col items-center border-t border-line py-9 text-center md:pr-10 lg:items-start lg:text-left">
@@ -186,7 +194,7 @@ export function Aplicacion() {
                 {String(i + 1).padStart(2, "0")}
               </span>
               <h3 className="mt-5 text-xl tracking-[0.16em] uppercase">{a.t}</h3>
-              <p className="mx-auto mt-4 max-w-[32ch] text-sm leading-relaxed text-muted-foreground lg:mx-0">
+              <p className="mx-auto mt-4 max-w-[38ch] text-sm leading-relaxed text-muted-foreground lg:mx-0">
                 {a.d}
               </p>
             </article>
@@ -198,9 +206,21 @@ export function Aplicacion() {
 }
 
 const bonos = [
-  { t: "Diario de claridad", label: "Bono 01 — Imagen / Mockup" },
-  { t: "Guía de respuestas conscientes", label: "Bono 02 — Imagen / Mockup" },
-  { t: "Mapa de decisiones", label: "Bono 03 — Imagen / Mockup" },
+  {
+    t: "Diario de claridad",
+    label: "Bono 01 — Imagen / Mockup",
+    d: "Para cuando sabes que necesitas cambiar algo, pero no sabes por dónde empezar.",
+  },
+  {
+    t: "Mapa de decisiones",
+    label: "Bono 02 — Imagen / Mockup",
+    d: "Para ayudarte a ordenar una decisión importante antes de actuar.",
+  },
+  {
+    t: "Guía de respuestas conscientes",
+    label: "Bono 03 — Imagen / Mockup",
+    d: "Para esos momentos en los que sabes que estás a punto de reaccionar.",
+  },
 ];
 
 export function Bonos() {
@@ -218,10 +238,13 @@ export function Bonos() {
       <div className="mt-10 grid gap-10 md:mt-16 md:grid-cols-3">
         {bonos.map((b, i) => (
           <Reveal key={b.t} delay={i * 110}>
-            <div className="flex flex-col items-center lg:items-start">
+            <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
               <MediaFrame label={b.label} ratio="3 / 4" />
               <h3 className="mt-6 text-base tracking-[0.16em] uppercase">{b.t}</h3>
               <span className="rule-gold mt-4" />
+              <p className="mx-auto mt-4 max-w-[30ch] text-sm leading-relaxed text-muted-foreground lg:mx-0">
+                {b.d}
+              </p>
             </div>
           </Reveal>
         ))}
