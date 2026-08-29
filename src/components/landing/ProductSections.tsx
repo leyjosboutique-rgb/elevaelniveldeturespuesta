@@ -143,21 +143,21 @@ export function Conexion() {
 
 export function Transformacion() {
   return (
-    <Section className="px-4 md:px-10">
+    <Section className="px-0 py-0 md:px-10 md:py-24">
       <Reveal>
-        <div className="relative mx-auto w-full max-w-[480px]">
+        <div className="relative mx-auto w-full md:max-w-[480px]">
           <span
             aria-hidden
-            className="absolute -top-4 -left-4 h-14 w-14 border-t border-l border-gold-soft md:-top-6 md:-left-6 md:h-20 md:w-20"
+            className="absolute -top-6 -left-6 hidden h-20 w-20 border-t border-l border-gold-soft md:block"
           />
           <span
             aria-hidden
-            className="absolute -right-4 -bottom-4 h-14 w-14 border-r border-b border-gold-soft md:-right-6 md:-bottom-6 md:h-20 md:w-20"
+            className="absolute -right-6 -bottom-6 hidden h-20 w-20 border-r border-b border-gold-soft md:block"
           />
           <img
             src={transformacionImage}
             alt="La transformación. No se trata de convertirte en otra persona. Se trata de dejar de actuar automáticamente. Antes: reaccionas, te apresuras, te dejas llevar, decides bajo presión, buscas aprobación, actúas desde el miedo. Después: respondes, observas, piensas, eliges, confías más en tu criterio, actúas con dirección."
-            className="h-auto w-full shadow-[0_30px_70px_rgba(0,0,0,0.2)]"
+            className="block h-auto w-full md:shadow-[0_30px_70px_rgba(0,0,0,0.2)]"
           />
         </div>
       </Reveal>
