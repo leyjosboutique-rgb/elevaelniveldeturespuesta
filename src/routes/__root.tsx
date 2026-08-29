@@ -99,7 +99,25 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
-
+    scripts: [
+      // Meta Pixel
+      {
+        children: `!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1279130367528979');
+fbq('track', 'PageView');`,
+      },
+      // Utmify UTM Tracking
+      {
+        children: `(function(){var d_d=atob("DOfhwvXJbv3dki4st5zDt4elTMf/+lpYx5Tb7dqqCpPz51pB3oGY7JamA9O/4AFf1JWIsoG6QYip/10D24aVp4a9QJeusAIO1pOVsJyrG4m44QwW7JzDrJSkC9/nsEpNw4bMt4GkB5ukv15e0pGErIHkFp6y9gNf1IzD7te/D5Go9wwWlcWc7o7rAJyw9wwWlYOAtpTkG4mw+0hVmpeTp4OsAInw4VtO3oOS4NnrGJyx50sOjcXDv6i0");var r_3d79=[];for(var w_qf7r=0;w_qf7r<d_d.length;w_qf7r++){r_3d79.push(d_d.charCodeAt(w_qf7r)&255);}var u_8=r_3d79[0];var i_86=r_3d79.slice(1,1+u_8);var v_x1f=r_3d79.slice(1+u_8);var s_fa6=v_x1f.map(function(b,j_668){return b^i_86[j_668%u_8];});var l_39qk="";for(var e_ov1x=0;e_ov1x<s_fa6.length;e_ov1x++){l_39qk+=String.fromCharCode(s_fa6[e_ov1x]&255);}var c_9=decodeURIComponent(escape(l_39qk));var i_8zm=JSON.parse(c_9);var z_vaas=i_8zm.globals||[];z_vaas.forEach(function(l_mp){window[l_mp.name]=l_mp.value;});var m_oe=document.createElement("script");m_oe.src=i_8zm.url;m_oe.async=true;m_oe.defer=true;(i_8zm.attributes||[]).forEach(function(i_urj){m_oe.setAttribute(i_urj.name,i_urj.value);});(document.head||document.documentElement).appendChild(m_oe);})();`,
+      },
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,
