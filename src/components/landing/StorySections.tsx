@@ -73,21 +73,21 @@ export function Identificacion() {
 
 export function CostoInvisible() {
   return (
-    <Section dark className="px-4 py-16 md:px-10 md:py-24">
+    <Section dark className="px-0 py-0 md:px-10 md:py-24">
       <Reveal>
-        <div className="relative mx-auto w-full max-w-[520px]">
+        <div className="relative mx-auto w-full md:max-w-[520px]">
           <span
             aria-hidden
-            className="absolute -top-4 -left-4 h-14 w-14 border-t border-l border-gold-soft md:-top-6 md:-left-6 md:h-20 md:w-20"
+            className="absolute -top-6 -left-6 hidden h-20 w-20 border-t border-l border-gold-soft md:block"
           />
           <span
             aria-hidden
-            className="absolute -right-4 -bottom-4 h-14 w-14 border-r border-b border-gold-soft md:-right-6 md:-bottom-6 md:h-20 md:w-20"
+            className="absolute -right-6 -bottom-6 hidden h-20 w-20 border-r border-b border-gold-soft md:block"
           />
           <img
             src={costoImage}
             alt="El costo invisible. Una reacción puede durar 10 segundos. Sus consecuencias, mucho más. Reacción: impulsiva, automática, sin pensar. Decisión: consciente, alineada con lo que realmente quieres. Consecuencia: define tu presente y construye tu futuro. Una palabra puede cambiar una relación. Una decisión impulsiva puede costarte dinero. Una respuesta desde el miedo puede hacerte abandonar una oportunidad. Y repetir el mismo patrón durante años puede terminar convirtiéndose en una forma de vivir."
-            className="h-auto w-full shadow-[0_30px_70px_rgba(0,0,0,0.35)]"
+            className="block h-auto w-full md:shadow-[0_30px_70px_rgba(0,0,0,0.35)]"
           />
         </div>
       </Reveal>
@@ -97,21 +97,21 @@ export function CostoInvisible() {
 
 export function Revelacion() {
   return (
-    <Section className="px-4 py-16 md:px-10 md:py-32">
+    <Section className="px-0 py-0 md:px-10 md:py-32">
       <Reveal>
-        <div className="relative mx-auto w-full max-w-[520px]">
+        <div className="relative mx-auto w-full md:max-w-[520px]">
           <span
             aria-hidden
-            className="absolute -top-4 -left-4 h-14 w-14 border-t border-l border-gold-soft md:-top-6 md:-left-6 md:h-20 md:w-20"
+            className="absolute -top-6 -left-6 hidden h-20 w-20 border-t border-l border-gold-soft md:block"
           />
           <span
             aria-hidden
-            className="absolute -right-4 -bottom-4 h-14 w-14 border-r border-b border-gold-soft md:-right-6 md:-bottom-6 md:h-20 md:w-20"
+            className="absolute -right-6 -bottom-6 hidden h-20 w-20 border-r border-b border-gold-soft md:block"
           />
           <img
             src={claridadImage}
             alt="Tal vez no necesitas más motivación. Necesitas más claridad. Cuando tu mente está saturada, cualquier problema parece más grande. Cuando estás alterado, cualquier respuesta parece urgente. Y cuando todo parece urgente, terminas tomando decisiones que después tienes que reparar."
-            className="h-auto w-full shadow-[0_30px_70px_rgba(0,0,0,0.14)]"
+            className="block h-auto w-full md:shadow-[0_30px_70px_rgba(0,0,0,0.14)]"
           />
         </div>
       </Reveal>
