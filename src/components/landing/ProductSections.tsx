@@ -135,16 +135,16 @@ export function Conexion() {
 
 export function Transformacion() {
   return (
-    <Section>
+    <Section className="px-4 md:px-10">
       <Reveal>
-        <div className="relative mx-auto w-full max-w-[440px]">
+        <div className="relative mx-auto w-full max-w-[480px]">
           <span
             aria-hidden
-            className="absolute -top-6 -left-6 hidden h-20 w-20 border-t border-l border-gold-soft md:block"
+            className="absolute -top-4 -left-4 h-14 w-14 border-t border-l border-gold-soft md:-top-6 md:-left-6 md:h-20 md:w-20"
           />
           <span
             aria-hidden
-            className="absolute -right-6 -bottom-6 hidden h-20 w-20 border-r border-b border-gold-soft md:block"
+            className="absolute -right-4 -bottom-4 h-14 w-14 border-r border-b border-gold-soft md:-right-6 md:-bottom-6 md:h-20 md:w-20"
           />
           <img
             src={transformacionImage}
