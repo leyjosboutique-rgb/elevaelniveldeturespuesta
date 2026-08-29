@@ -177,12 +177,6 @@ export function Oferta() {
           </div>
         </Reveal>
 
-        <Reveal delay={300}>
-          <p className="mt-10 font-serif text-6xl leading-none md:text-7xl">
-            $15 <span className="align-super text-xl tracking-[0.2em]">USD</span>
-          </p>
-        </Reveal>
-
         <Reveal delay={320}>
           <OfertaCountdown />
         </Reveal>
