@@ -104,9 +104,9 @@ export function MediaFrame({
   );
 }
 
-const CHECKOUT_URL = "#oferta";
+const CHECKOUT_URL = "https://pay.hotmart.com/V107329211A?checkoutMode=10";
 
-/** Primary call to action. Points to the offer anchor until checkout is wired. */
+/** Primary call to action. Points to the real checkout link. */
 export function Cta({
   children,
   variant = "solid",
@@ -122,6 +122,11 @@ export function Cta({
     <a
       href={href}
       data-checkout-cta
+      onClick={() => {
+        if (typeof window !== "undefined" && typeof (window as any).fbq === "function") {
+          (window as any).fbq("track", "InitiateCheckout");
+        }
+      }}
       className={cn(
         "group inline-flex items-center justify-center gap-3 rounded-full px-9 py-4 font-serif text-base font-semibold tracking-normal transition-all duration-300",
         variant === "solid"
