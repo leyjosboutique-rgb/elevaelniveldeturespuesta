@@ -28,6 +28,43 @@ function TopBar() {
   );
 }
 
+/**
+ * Fixed bottom CTA bar. Stays hidden until the person scrolls into the
+ * "Conexión" section, then appears and stays visible for the rest of the
+ * page (never hides again).
+ */
+function StickyCta() {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const target = document.getElementById("conexion");
+    if (!target) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0 },
+    );
+
+    observer.observe(target);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div
+      className={`fixed inset-x-0 bottom-0 z-50 flex justify-center border-t border-line bg-background/95 px-6 py-3 backdrop-blur transition-transform duration-500 md:px-10 ${
+        visible ? "translate-y-0" : "translate-y-full"
+      }`}
+    >
+      <Cta className="max-w-[420px]">Quiero dejar de reaccionar</Cta>
+    </div>
+  );
+}
+
 export function Hero() {
   return (
     <>
@@ -40,13 +77,8 @@ export function Hero() {
             className="block h-auto w-full"
           />
         </Reveal>
-
-        <div className="px-6 py-10 text-center md:px-10 md:py-14">
-          <Reveal delay={100}>
-            <Cta>Quiero dejar de reaccionar</Cta>
-          </Reveal>
-        </div>
       </header>
+      <StickyCta />
     </>
   );
 }
