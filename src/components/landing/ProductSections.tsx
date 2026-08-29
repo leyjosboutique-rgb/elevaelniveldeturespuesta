@@ -106,7 +106,7 @@ export function EbookDos() {
 
 export function Conexion() {
   return (
-    <Section dark>
+    <Section id="conexion" dark>
       <div className="mx-auto max-w-3xl lg:mx-0">
         <Reveal>
           <Eyebrow>La conexión</Eyebrow>
