@@ -16,7 +16,7 @@ function TopBar() {
 
   return (
     <div
-      className="sticky top-0 z-50 bg-accent px-4 py-2.5 text-center text-[0.68rem] font-semibold tracking-[0.16em] text-accent-foreground uppercase"
+      className="topbar-glow sticky top-0 z-50 bg-[var(--cta-yellow)] px-4 py-2.5 text-center text-[0.68rem] font-semibold tracking-[0.16em] text-ink uppercase"
       role="status"
       aria-live="polite"
     >
