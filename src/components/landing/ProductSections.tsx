@@ -66,9 +66,6 @@ export function EbookUno() {
     </Section>
   );
 }
-    </Section>
-  );
-}
 
 export function EbookDos() {
   return (
