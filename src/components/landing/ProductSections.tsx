@@ -31,11 +31,11 @@ export function EbookUno() {
       <div className="mx-auto max-w-2xl text-center">
         <Reveal>
           <h2 className="display-md mt-8 uppercase">
-            Primero <span className="text-[#B8944A]">calma</span>.
+            Primero <span className="text-[#B23A2E]">calma</span>.
             <br />
             Después <span className="text-[#3B5D42]">claridad</span>.
             <br />
-            Finalmente <span className="text-[#7A2E3A]">dirección</span>.
+            Finalmente <span className="text-[#D4A017]">dirección</span>.
           </h2>
         </Reveal>
         <Reveal delay={100}>
