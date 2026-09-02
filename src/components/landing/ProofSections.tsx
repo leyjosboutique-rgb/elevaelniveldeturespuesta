@@ -117,15 +117,17 @@ function OfertaCountdown() {
   return (
     <div className="mt-10 flex flex-col items-center gap-3 border-y border-line py-8">
       <p className="eyebrow">{expired ? "Oferta" : "Precio especial disponible por"}</p>
-      <p
-        className="font-serif text-5xl tabular-nums md:text-6xl"
-        aria-live="polite"
-        aria-label="Tiempo restante en minutos y segundos"
-      >
-        {pad(Math.floor(left / 60))}
-        <span className="text-accent">:</span>
-        {pad(left % 60)}
-      </p>
+      <div className="flex h-32 w-32 items-center justify-center rounded-full border-2 border-accent md:h-36 md:w-36">
+        <p
+          className="font-serif text-4xl tabular-nums md:text-5xl"
+          aria-live="polite"
+          aria-label="Tiempo restante en minutos y segundos"
+        >
+          {pad(Math.floor(left / 60))}
+          <span className="text-accent">:</span>
+          {pad(left % 60)}
+        </p>
+      </div>
       <p className="text-[0.6rem] tracking-[0.28em] text-muted-foreground uppercase">
         Minutos : Segundos
       </p>
