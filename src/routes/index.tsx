@@ -11,7 +11,6 @@ import {
   Conexion,
   EbookDos,
   EbookUno,
-  Transformacion,
 } from "@/components/landing/ProductSections";
 import {
   Cierre,
@@ -65,7 +64,6 @@ function Index() {
       <EbookUno />
       <EbookDos />
       <Conexion />
-      <Transformacion />
       <Aplicacion />
       <Bonos />
       <Testimonios />
