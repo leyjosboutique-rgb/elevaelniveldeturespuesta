@@ -4,6 +4,10 @@ import ebookDosMockup from "@/assets/libromente.webp";
 import conexionImage from "@/assets/conexion.webp";
 import transformacionImage from "@/assets/transformacion.webp";
 import aplicacionImage from "@/assets/aplicacion.webp";
+import bono01Image from "@/assets/bonus-01.webp";
+import bono03Image from "@/assets/bonus-03.webp";
+import bono04Image from "@/assets/bonus-04.webp";
+import bono05Image from "@/assets/bonus-05.webp";
 
 function BenefitList({ items }: { items: string[] }) {
   return (
@@ -186,19 +190,24 @@ export function Aplicacion() {
 
 const bonos = [
   {
-    t: "Diario de claridad",
-    label: "Bono 01 — Imagen / Mockup",
-    d: "Para cuando sabes que necesitas cambiar algo, pero no sabes por dónde empezar.",
+    t: "Mapa para volver a tomar el control",
+    src: bono01Image,
+    d: "Para cuando no sabes ni por dónde empezar. Un primer paso concreto para el día en que todo se siente demasiado.",
   },
   {
-    t: "Mapa de decisiones",
-    label: "Bono 02 — Imagen / Mockup",
-    d: "Para ayudarte a ordenar una decisión importante antes de actuar.",
+    t: "Rutina de 15 minutos",
+    src: bono03Image,
+    d: "Para cuando sientes que no tienes tiempo. Una forma de aplicar el método sin reorganizar tu vida entera.",
   },
   {
-    t: "Guía de respuestas conscientes",
-    label: "Bono 03 — Imagen / Mockup",
-    d: "Para esos momentos en los que sabes que estás a punto de reaccionar.",
+    t: "Inventario de capacidades monetizables",
+    src: bono04Image,
+    d: "Para cuando sientes que no tienes nada que valga la pena cobrar. Un ejercicio para ver, en blanco y negro, lo que ya sabes hacer.",
+  },
+  {
+    t: "Primer paso hacia algo propio",
+    src: bono05Image,
+    d: "Para cuando sigues esperando sentirte lista. La confianza aparece después de moverte, no antes.",
   },
 ];
 
@@ -214,14 +223,14 @@ export function Bonos() {
         </h2>
       </Reveal>
 
-      <div className="mt-10 grid gap-10 md:mt-16 md:grid-cols-3">
+      <div className="mt-10 grid gap-10 md:mt-16 md:grid-cols-2 lg:grid-cols-4">
         {bonos.map((b, i) => (
           <Reveal key={b.t} delay={i * 110}>
-            <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
-              <MediaFrame label={b.label} ratio="3 / 4" />
-              <h3 className="mt-6 text-base tracking-[0.16em] uppercase">{b.t}</h3>
+            <div className="flex flex-col items-center text-center">
+              <MediaFrame src={b.src} alt={b.t} label={b.t} ratio="3 / 2" />
+              <h3 className="mt-6 text-base tracking-[0.14em] uppercase">{b.t}</h3>
               <span className="rule-gold mt-4" />
-              <p className="mx-auto mt-4 max-w-[30ch] text-sm leading-relaxed text-muted-foreground lg:mx-0">
+              <p className="mx-auto mt-4 max-w-[28ch] text-sm leading-relaxed text-muted-foreground">
                 {b.d}
               </p>
             </div>
