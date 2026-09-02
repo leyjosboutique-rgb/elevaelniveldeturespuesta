@@ -2,7 +2,6 @@ import { Cta, Eyebrow, MediaFrame, Reveal, Section } from "./primitives";
 import ebookUnoMockup from "@/assets/libro40dias.webp";
 import ebookDosMockup from "@/assets/libromente.webp";
 import conexionImage from "@/assets/conexion.webp";
-import transformacionImage from "@/assets/transformacion.webp";
 import aplicacionImage from "@/assets/aplicacion.webp";
 import bono01Image from "@/assets/bonus-01.webp";
 import bono03Image from "@/assets/bonus-03.webp";
@@ -28,8 +27,13 @@ export function EbookUno() {
       <div className="mx-auto max-w-2xl text-center">
         <Reveal>
           <h2 className="display-md mt-8 uppercase">
-            No son dos libros separados. Son dos partes del mismo proceso.
+            Primero calma. Después claridad. Finalmente dirección.
           </h2>
+        </Reveal>
+        <Reveal delay={100}>
+          <p className="mt-6 text-lg font-medium">
+            No son dos libros separados. Son dos partes del mismo proceso.
+          </p>
         </Reveal>
       </div>
 
@@ -140,29 +144,6 @@ export function Conexion() {
   );
 }
 
-export function Transformacion() {
-  return (
-    <Section className="px-0 py-0 md:px-10 md:py-24">
-      <Reveal>
-        <div className="relative mx-auto w-full md:max-w-[480px]">
-          <span
-            aria-hidden
-            className="absolute -top-6 -left-6 hidden h-20 w-20 border-t border-l border-gold-soft md:block"
-          />
-          <span
-            aria-hidden
-            className="absolute -right-6 -bottom-6 hidden h-20 w-20 border-r border-b border-gold-soft md:block"
-          />
-          <img
-            src={transformacionImage}
-            alt="La transformación. No se trata de convertirte en otra persona. Se trata de dejar de actuar automáticamente. Antes: reaccionas, te apresuras, te dejas llevar, decides bajo presión, buscas aprobación, actúas desde el miedo. Después: respondes, observas, piensas, eliges, confías más en tu criterio, actúas con dirección."
-            className="block h-auto w-full md:shadow-[0_30px_70px_rgba(0,0,0,0.2)]"
-          />
-        </div>
-      </Reveal>
-    </Section>
-  );
-}
 
 export function Aplicacion() {
   return (
