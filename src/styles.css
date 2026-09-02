@@ -427,3 +427,8 @@
     scroll-behavior: auto;
   }
 }
+
+/* Ocultar el badge "Edit with Lovable" en el sitio publicado */
+#lovable-badge {
+  display: none !important;
+}
