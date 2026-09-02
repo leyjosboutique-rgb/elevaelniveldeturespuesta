@@ -79,6 +79,8 @@ export function Testimonios() {
                     src={t.photo}
                     alt={`Foto de ${t.name}`}
                     className="h-full w-full object-cover"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <div className="min-w-0">
@@ -203,6 +205,8 @@ export function Garantia() {
               src={garantiaSello}
               alt="Sello de garantía de 15 días"
               className="h-full w-full object-cover"
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </Reveal>
