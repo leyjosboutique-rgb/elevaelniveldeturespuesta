@@ -86,8 +86,7 @@ export function LibroPreview() {
     <Section className="border-y border-line bg-secondary">
       <Reveal>
         <div className="mx-auto max-w-2xl text-center">
-          <Eyebrow>Mira por dentro</Eyebrow>
-          <h2 className="display-md mt-8 uppercase">Así se ve el libro por dentro</h2>
+          <h2 className="display-md mt-8 uppercase">Esto es lo que hubieras querido leer antes.</h2>
         </div>
       </Reveal>
       <Reveal delay={140}>
