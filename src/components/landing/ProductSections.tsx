@@ -7,6 +7,8 @@ import bono01Image from "@/assets/bonus-01.webp";
 import bono03Image from "@/assets/bonus-03.webp";
 import bono04Image from "@/assets/bonus-04.webp";
 import bono05Image from "@/assets/bonus-05.webp";
+import libroVideo from "@/assets/libro-preview.mp4";
+import libroPoster from "@/assets/libro-preview-poster.jpg";
 
 function BenefitList({ items }: { items: string[] }) {
   return (
@@ -79,6 +81,32 @@ export function EbookUno() {
   );
 }
 
+export function LibroPreview() {
+  return (
+    <Section className="border-y border-line bg-secondary">
+      <Reveal>
+        <div className="mx-auto max-w-2xl text-center">
+          <Eyebrow>Mira por dentro</Eyebrow>
+          <h2 className="display-md mt-8 uppercase">Así se ve el libro por dentro</h2>
+        </div>
+      </Reveal>
+      <Reveal delay={140}>
+        <div className="relative mx-auto mt-10 w-full max-w-[320px] overflow-hidden rounded-2xl border border-line shadow-[0_30px_70px_rgba(0,0,0,0.18)]">
+          <video
+            className="block h-auto w-full"
+            controls
+            playsInline
+            preload="none"
+            poster={libroPoster}
+          >
+            <source src={libroVideo} type="video/mp4" />
+          </video>
+        </div>
+      </Reveal>
+    </Section>
+  );
+}
+
 export function EbookDos() {
   return (
     <Section id="ebook-02" className="border-y border-line bg-secondary">
@@ -143,6 +171,8 @@ export function Conexion() {
             src={conexionImage}
             alt="Por eso estos dos libros trabajan desde dos direcciones diferentes. 40 días de viaje en silencio: tu mundo interno. Una mente vale más que un millón: tu manera de pensar y decidir. Tú: actúas desde un lugar diferente."
             className="h-auto w-full"
+            loading="lazy"
+            decoding="async"
           />
         </div>
       </Reveal>
@@ -168,6 +198,8 @@ export function Aplicacion() {
             src={aplicacionImage}
             alt="¿Qué empiezas a hacer diferente? 01 Cuando alguien te provoca: en lugar de responder inmediatamente, aprendes a hacer una pausa. 02 Cuando tienes que tomar una decisión importante: en lugar de decidir desde la presión, aprendes a observar el panorama completo. 03 Cuando aparece una oportunidad: en lugar de verla únicamente como riesgo, aprendes a analizarla. 04 Cuando el dinero se vuelve un problema: en lugar de actuar solamente desde la preocupación, empiezas a pensar en opciones. No se trata de tener todo resuelto. Se trata de elegirte, incluso cuando es difícil."
             className="block h-auto w-full md:shadow-[0_30px_70px_rgba(0,0,0,0.2)]"
+            loading="lazy"
+            decoding="async"
           />
         </div>
       </Reveal>
