@@ -65,8 +65,8 @@ function Index() {
       <EbookDos />
       <Conexion />
       <Aplicacion />
-      <Bonos />
       <Testimonios />
+      <Bonos />
       <Oferta />
       <Garantia />
       <Faq />
