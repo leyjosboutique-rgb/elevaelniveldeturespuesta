@@ -21,8 +21,10 @@ function TopBar() {
       aria-live="polite"
     >
       <span aria-hidden>✦</span> Precio especial disponible por{" "}
-      <span className="topbar-timer tabular-nums">
-        {pad(Math.floor(left / 60))}:{pad(left % 60)}
+      <span className="inline-flex h-6 items-center justify-center rounded-full border border-ink/40 px-3 align-middle text-[0.62rem] normal-case">
+        <span className="topbar-timer tabular-nums">
+          {pad(Math.floor(left / 60))}:{pad(left % 60)}
+        </span>
       </span>
     </div>
   );
@@ -60,7 +62,7 @@ function StickyCta() {
         visible ? "translate-y-0" : "translate-y-full"
       }`}
     >
-      <Cta className="max-w-[420px]">Quiero dejar de reaccionar</Cta>
+      <Cta className="max-w-[420px]">Quiero recuperar el control</Cta>
     </div>
   );
 }
