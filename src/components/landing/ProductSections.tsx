@@ -27,7 +27,11 @@ export function EbookUno() {
       <div className="mx-auto max-w-2xl text-center">
         <Reveal>
           <h2 className="display-md mt-8 uppercase">
-            Primero calma. Después claridad. Finalmente dirección.
+            Primero <span className="text-[#B8944A]">calma</span>.
+            <br />
+            Después <span className="text-[#3B5D42]">claridad</span>.
+            <br />
+            Finalmente <span className="text-[#7A2E3A]">dirección</span>.
           </h2>
         </Reveal>
         <Reveal delay={100}>
@@ -221,7 +225,7 @@ export function Bonos() {
 
       <Reveal delay={120}>
         <div className="mt-16">
-          <Cta variant="outline">Quiero dejar de reaccionar</Cta>
+          <Cta>Quiero dejar de reaccionar</Cta>
         </div>
       </Reveal>
     </Section>
