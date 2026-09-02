@@ -11,6 +11,7 @@ import {
   Conexion,
   EbookDos,
   EbookUno,
+  LibroPreview,
 } from "@/components/landing/ProductSections";
 import {
   Cierre,
@@ -65,8 +66,9 @@ function Index() {
       <EbookDos />
       <Conexion />
       <Aplicacion />
-      <Testimonios />
+      <LibroPreview />
       <Bonos />
+      <Testimonios />
       <Oferta />
       <Garantia />
       <Faq />
