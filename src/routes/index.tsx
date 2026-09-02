@@ -3,7 +3,6 @@ import { Hero } from "@/components/landing/Hero";
 import {
   CostoInvisible,
   Identificacion,
-  Mecanismo,
   Revelacion,
 } from "@/components/landing/StorySections";
 import {
@@ -63,7 +62,6 @@ function Index() {
       <Identificacion />
       <CostoInvisible />
       <Revelacion />
-      <Mecanismo />
       <EbookUno />
       <EbookDos />
       <Conexion />
