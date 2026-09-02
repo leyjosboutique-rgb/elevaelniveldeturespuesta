@@ -10,11 +10,13 @@ import bono05Image from "@/assets/bonus-05.webp";
 
 function BenefitList({ items }: { items: string[] }) {
   return (
-    <ul className="mx-auto mt-10 max-w-[46ch] divide-y divide-line border-y border-line">
-      {items.map((b) => (
-        <li key={b} className="flex items-baseline justify-center gap-4 py-4">
-          <span aria-hidden className="h-px w-5 shrink-0 translate-y-[-0.3em] bg-accent" />
-          <span className="text-sm tracking-wide md:text-base">{b}</span>
+    <ul className="mx-auto mt-10 flex max-w-[46ch] flex-col gap-5 text-left">
+      {items.map((b, i) => (
+        <li key={b} className="flex items-start gap-4">
+          <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-accent font-serif text-xs text-accent">
+            {String(i + 1).padStart(2, "0")}
+          </span>
+          <span className="pt-0.5 text-sm leading-relaxed tracking-wide md:text-base">{b}</span>
         </li>
       ))}
     </ul>
