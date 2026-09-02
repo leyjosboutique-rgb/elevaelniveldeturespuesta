@@ -70,7 +70,13 @@ export function MediaFrame({
         className={cn("frame relative w-full overflow-hidden", className)}
         style={{ aspectRatio: ratio }}
       >
-        <img src={src} alt={alt ?? label} className="h-full w-full object-cover" />
+        <img
+          src={src}
+          alt={alt ?? label}
+          loading="lazy"
+          decoding="async"
+          className="h-full w-full object-cover"
+        />
       </div>
     );
   }
@@ -104,7 +110,7 @@ export function MediaFrame({
   );
 }
 
-const CHECKOUT_URL = "https://pay.hotmart.com/V107329211A?checkoutMode=10";
+const CHECKOUT_URL = "https://pay.hotmart.com/V107329211A?off=su9uegzp&checkoutMode=10";
 
 /** Primary call to action. Points to the real checkout link. */
 export function Cta({
