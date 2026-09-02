@@ -21,7 +21,7 @@ function TopBar() {
       aria-live="polite"
     >
       <span aria-hidden>✦</span> Precio especial disponible por{" "}
-      <span className="inline-flex h-6 items-center justify-center rounded-full border border-ink/40 px-3 align-middle text-[0.62rem] normal-case">
+      <span className="inline-flex h-6 items-center justify-center rounded-full bg-white px-3 align-middle text-[0.62rem] font-bold normal-case text-ink">
         <span className="topbar-timer tabular-nums">
           {pad(Math.floor(left / 60))}:{pad(left % 60)}
         </span>
