@@ -2,7 +2,6 @@ import { Eyebrow, MediaFrame, Reveal, Section } from "./primitives";
 import identificacionImage from "@/assets/identificacion.webp";
 import claridadImage from "@/assets/claridad.webp";
 import costoImage from "@/assets/costo.webp";
-import mecanismoImage from "@/assets/mecanismo.webp";
 
 export function Identificacion() {
   return (
@@ -69,30 +68,6 @@ export function Revelacion() {
             src={claridadImage}
             alt="Tal vez no necesitas más motivación. Necesitas más claridad. Cuando tu mente está saturada, cualquier problema parece más grande. Cuando estás alterado, cualquier respuesta parece urgente. Y cuando todo parece urgente, terminas tomando decisiones que después tienes que reparar."
             className="block h-auto w-full md:shadow-[0_30px_70px_rgba(0,0,0,0.14)]"
-          />
-        </div>
-      </Reveal>
-    </Section>
-  );
-}
-
-export function Mecanismo() {
-  return (
-    <Section dark className="px-0 py-0 md:px-10 md:py-24">
-      <Reveal>
-        <div className="relative mx-auto w-full md:max-w-[480px]">
-          <span
-            aria-hidden
-            className="absolute -top-6 -left-6 hidden h-20 w-20 border-t border-l border-gold-soft md:block"
-          />
-          <span
-            aria-hidden
-            className="absolute -right-6 -bottom-6 hidden h-20 w-20 border-r border-b border-gold-soft md:block"
-          />
-          <img
-            src={mecanismoImage}
-            alt="El mecanismo. Primero calma, después claridad, finalmente dirección. 01 Calma: aprende a crear un espacio entre lo que sucede y tu reacción. 02 Claridad: aprende a pensar con más perspectiva antes de tomar una decisión. 03 Dirección: usa esa claridad para actuar mejor en tus relaciones, tu trabajo y tus finanzas. Porque una mente alterada busca alivio. Una mente clara busca soluciones."
-            className="block h-auto w-full md:shadow-[0_30px_70px_rgba(0,0,0,0.3)]"
           />
         </div>
       </Reveal>
