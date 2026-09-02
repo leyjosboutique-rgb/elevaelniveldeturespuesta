@@ -60,7 +60,7 @@ function StickyCta() {
         visible ? "translate-y-0" : "translate-y-full"
       }`}
     >
-      <Cta className="max-w-[420px]">Quiero recuperar el control</Cta>
+      <Cta className="max-w-[420px]">Quiero dejar de reaccionar</Cta>
     </div>
   );
 }
