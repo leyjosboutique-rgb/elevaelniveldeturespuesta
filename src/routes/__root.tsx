@@ -10,6 +10,7 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
+import heroPreloadImage from "../assets/hero-full.webp";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
@@ -90,8 +91,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Manrope:wght@300;400;500;600&display=swap",
+        rel: "preload",
+        as: "image",
+        href: heroPreloadImage,
+        fetchPriority: "high",
       },
       {
         rel: "stylesheet",
@@ -100,6 +103,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
     scripts: [
+      // Non-blocking font loading — inserts the stylesheet link after initial
+      // parsing instead of a render-blocking <link rel="stylesheet"> in <head>.
+      {
+        children: `(function(){
+var l = document.createElement('link');
+l.rel = 'stylesheet';
+l.href = 'https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Manrope:wght@300;400;500;600&display=swap';
+document.head.appendChild(l);
+})();`,
+      },
       // Meta Pixel
       {
         children: `!function(f,b,e,v,n,t,s)
